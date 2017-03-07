@@ -8,6 +8,7 @@ With this application it will be possible to extend web applications, meaning we
 All services will be available via technologies which are supported in all major browser, and do not rely on old technologies like OCX/ActiveX 
 
 Some possible services (not limited to) which can be offered:
+
 1. A real time communication channel between two or more web applications. For instance to share the current customer, and some status, on which the user is working. To have a secure channel, both applications can consider signing or encrypting the local application *should* not be responsible for that.
 2. For applications which offer work routing, it might be handy to know if the user is currently away from the keyboard, has his desktop locked.
 3. An real interface to Outlook, have you web application open an new email with all the information (like to, cc, bcc, subject etc) and even know when the email was sent.
