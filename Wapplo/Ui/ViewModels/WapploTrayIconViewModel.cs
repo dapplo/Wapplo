@@ -1,4 +1,27 @@
-﻿using System;
+﻿//  Dapplo - building blocks for desktop applications
+//  Copyright (C) 2016-2017 Dapplo
+// 
+//  For more information see: http://dapplo.net/
+//  Dapplo repositories are hosted on GitHub: https://github.com/dapplo
+// 
+//  This file is part of Wapplo
+// 
+//  Wapplo is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU Lesser General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+// 
+//  Wapplo is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU Lesser General Public License for more details.
+// 
+//  You should have a copy of the GNU Lesser General Public License
+//  along with Wapplo. If not, see <http://www.gnu.org/licenses/lgpl.txt>.
+
+#region using
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Linq;
@@ -13,10 +36,12 @@ using Dapplo.Log;
 using MahApps.Metro.IconPacks;
 using Wapplo.Languages;
 
+#endregion
+
 namespace Wapplo.Ui.ViewModels
 {
 	/// <summary>
-	/// Implementation of the system-tray icon
+	///     Implementation of the system-tray icon
 	/// </summary>
 	[Export(typeof(ITrayIconViewModel))]
 	public class WapploTrayIconViewModel : TrayIconViewModel
@@ -27,13 +52,18 @@ namespace Wapplo.Ui.ViewModels
 		private IEnumerable<Lazy<IMenuItem>> ContextMenuItems { get; set; }
 
 		[Import]
+		private IContextMenuTranslations ContextMenuTranslations { get; set; }
+
+		[Import]
 		private IEventAggregator EventAggregator { get; set; }
 
 		[Import]
 		public IWindowManager WindowManager { get; set; }
 
-		[Import]
-		private IContextMenuTranslations ContextMenuTranslations { get; set; }
+		public override void Click()
+		{
+			Log.Debug().WriteLine("Do something?");
+		}
 
 		public void Handle(string message)
 		{
@@ -67,15 +97,10 @@ namespace Wapplo.Ui.ViewModels
 			{
 				Kind = PackIconMaterialKind.Web,
 				Background = Brushes.White,
-				Foreground = Brushes.Black,
+				Foreground = Brushes.Black
 			};
 			Show();
 			EventAggregator.Subscribe(this);
-		}
-
-		public override void Click()
-		{
-			Log.Debug().WriteLine("Do something?");
 		}
 	}
 }

@@ -1,5 +1,30 @@
-﻿using System;
+﻿//  Dapplo - building blocks for desktop applications
+//  Copyright (C) 2016-2017 Dapplo
+// 
+//  For more information see: http://dapplo.net/
+//  Dapplo repositories are hosted on GitHub: https://github.com/dapplo
+// 
+//  This file is part of Wapplo
+// 
+//  Wapplo is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU Lesser General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+// 
+//  Wapplo is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU Lesser General Public License for more details.
+// 
+//  You should have a copy of the GNU Lesser General Public License
+//  along with Wapplo. If not, see <http://www.gnu.org/licenses/lgpl.txt>.
+
+#region using
+
+using System;
 using System.Runtime.InteropServices;
+
+#endregion
 
 namespace Wapplo.Utils
 {
@@ -20,7 +45,7 @@ namespace Wapplo.Utils
 		private static extern bool AttachConsole(uint dwProcessId);
 
 		/// <summary>
-		/// Close the Console
+		///     Close the Console
 		/// </summary>
 		public static void Close()
 		{
@@ -35,7 +60,7 @@ namespace Wapplo.Utils
 		private static extern bool FreeConsole();
 
 		/// <summary>
-		/// Show the console
+		///     Show the console
 		/// </summary>
 		/// <param name="text"></param>
 		public static void Show(string text)

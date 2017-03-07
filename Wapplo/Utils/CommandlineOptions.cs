@@ -1,8 +1,33 @@
-﻿using System.Collections.Generic;
+﻿//  Dapplo - building blocks for desktop applications
+//  Copyright (C) 2016-2017 Dapplo
+// 
+//  For more information see: http://dapplo.net/
+//  Dapplo repositories are hosted on GitHub: https://github.com/dapplo
+// 
+//  This file is part of Wapplo
+// 
+//  Wapplo is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU Lesser General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+// 
+//  Wapplo is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU Lesser General Public License for more details.
+// 
+//  You should have a copy of the GNU Lesser General Public License
+//  along with Wapplo. If not, see <http://www.gnu.org/licenses/lgpl.txt>.
+
+#region using
+
+using System.Collections.Generic;
 using System.IO;
 using CommandLine;
 using Dapplo.Ini;
 using Wapplo.Modules;
+
+#endregion
 
 namespace Wapplo.Utils
 {
@@ -15,13 +40,13 @@ namespace Wapplo.Utils
 		private static readonly IWebserverConfiguration WebserverConfiguration = IniConfig.Current.Get<IWebserverConfiguration>();
 
 		/// <summary>
-		/// Hostname to accept request on.
+		///     Hostname to accept request on.
 		/// </summary>
 		[Option("hostname", Default = "localhost", HelpText = "Hostname to accept request on.")]
 		public string Hostname { get; set; }
 
 		/// <summary>
-		/// Port to accept request on.
+		///     Port to accept request on.
 		/// </summary>
 		[Option("port", Default = 9277, HelpText = "Port to accept request on, default is WAPP => 9277.")]
 		public int Port { get; set; }
@@ -38,7 +63,7 @@ namespace Wapplo.Utils
 		public bool Verbose { get; set; }
 
 		/// <summary>
-		/// Process the arguments
+		///     Process the arguments
 		/// </summary>
 		/// <param name="args"></param>
 		/// <returns></returns>
@@ -55,7 +80,7 @@ namespace Wapplo.Utils
 						config.HelpWriter = writer;
 					}
 				});
-				var parseResult = parser.ParseArguments(() => new CommandlineOptions { Port = WebserverConfiguration.Port, Hostname = WebserverConfiguration.Hostname },
+				var parseResult = parser.ParseArguments(() => new CommandlineOptions {Port = WebserverConfiguration.Port, Hostname = WebserverConfiguration.Hostname},
 					args);
 				result = parseResult.MapResult(parsed => parsed, nonParsed => null);
 				// TODO: Handle some options

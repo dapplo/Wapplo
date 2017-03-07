@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Wapplo.ShareContext.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -28,55 +29,57 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Wapplo.ShareContext.XML</DocumentationFile>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Dapplo.Addons, Version=0.4.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\Wapplo\packages\Dapplo.Addons.0.4.1\lib\net45\Dapplo.Addons.dll</HintPath>
+      <HintPath>..\packages\Dapplo.Addons.0.4.1\lib\net45\Dapplo.Addons.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Dapplo.Ini, Version=0.5.15.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\Wapplo\packages\Dapplo.Ini.0.5.15\lib\net45\Dapplo.Ini.dll</HintPath>
+      <HintPath>..\packages\Dapplo.Ini.0.5.15\lib\net45\Dapplo.Ini.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Dapplo.InterfaceImpl, Version=0.2.6.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\Wapplo\packages\Dapplo.InterfaceImpl.0.2.6\lib\net45\Dapplo.InterfaceImpl.dll</HintPath>
+      <HintPath>..\packages\Dapplo.InterfaceImpl.0.2.6\lib\net45\Dapplo.InterfaceImpl.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Dapplo.Log, Version=1.0.23.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\Wapplo\packages\Dapplo.Log.1.0.23\lib\net45\Dapplo.Log.dll</HintPath>
+      <HintPath>..\packages\Dapplo.Log.1.0.23\lib\net45\Dapplo.Log.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Dapplo.Owin, Version=0.1.26.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\Wapplo\packages\Dapplo.Owin.0.1.26\lib\net45\Dapplo.Owin.dll</HintPath>
+      <HintPath>..\packages\Dapplo.Owin.0.1.26\lib\net45\Dapplo.Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Dapplo.Utils, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\Wapplo\packages\Dapplo.Utils.1.0.131\lib\net45\Dapplo.Utils.dll</HintPath>
+      <HintPath>..\packages\Dapplo.Utils.1.0.131\lib\net45\Dapplo.Utils.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\Wapplo\packages\Microsoft.AspNet.SignalR.Core.2.2.1\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.1\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\Wapplo\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Owin.Hosting, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\Wapplo\packages\Microsoft.Owin.Hosting.3.0.1\lib\net45\Microsoft.Owin.Hosting.dll</HintPath>
+      <HintPath>..\packages\Microsoft.Owin.Hosting.3.0.1\lib\net45\Microsoft.Owin.Hosting.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\Wapplo\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\Wapplo\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
-      <HintPath>..\Wapplo\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
