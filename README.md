@@ -1,7 +1,7 @@
 # Wapplo
 Extend your Web-Applications with desktop services
 
-Wapplo is currently in a concept phase.
+Wapplo is currently in a concept phase, the name stands for Web APPlication building bLOcks.
 
 With this application it will be possible to extend web applications, meaning web sites (HTML) in the browser, with services which normally are only available to desktop applications. This was especially written for usage in companies, where currently all (or most) applications are web based, but have a need which is very hard to cover.
 
@@ -18,5 +18,7 @@ Some possible services (not limited to) which can be offered:
 7. Enhanced security, for instance via a USB dongle or the likes.
 8. Access your ticketing system, to report issues from your application
 9. Share information between users
+
+Wapplo will be mostly compatible with other Dapplo projects, make them available as building blocks to offer services.
 
 Currently this application will only work on Windows, but as .NET Core progresses and some of the needed technology is ported to this, it will also work on Linux or OSX.
