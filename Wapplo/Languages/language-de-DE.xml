@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<language>
+	<resources prefix="core">
+		<resource name="ok">Ok</resource>
+		<resource name="cancel">Abbrechen</resource>
+		<resource name="language">Sprache</resource>
+		<resource name="settings">Einstellungen</resource>
+	</resources>
+	<resources prefix="config">
+		<resource name="apply">Anwenden</resource>
+		<resource name="restore_defaults">Standardeinstellungen</resource>
+		<resource name="ui">Benutzeroberfläche</resource>
+		<resource name="addons">Erweiterungen</resource>
+		<resource name="filter">Typ Filtertext</resource>
+		<resource name="hotkey">Abkürzungstasten</resource>
+	</resources>
+	<resources prefix="contextmenu">
+		<resource name="title">Wapplo</resource>
+		<resource name="configure">Einstellungen</resource>
+		<resource name="exit">Abschließen</resource>
+	</resources>
+</language>

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wapplo", "Wapplo.csproj", "{F65AE9E4-AE09-4A09-A40E-3590A75F4751}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wapplo.ShareContext", "..\Wapplo.ShareContext\Wapplo.ShareContext.csproj", "{A03C8AD6-8B6B-4542-A357-051C6EC83BDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wapplo.ShareContext.Demo", "..\Wapplo.ShareContext.Demo\Wapplo.ShareContext.Demo.csproj", "{F26380A1-D65E-4A63-B90F-51FA7FEFBB22}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F65AE9E4-AE09-4A09-A40E-3590A75F4751}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F65AE9E4-AE09-4A09-A40E-3590A75F4751}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F65AE9E4-AE09-4A09-A40E-3590A75F4751}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F65AE9E4-AE09-4A09-A40E-3590A75F4751}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A03C8AD6-8B6B-4542-A357-051C6EC83BDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A03C8AD6-8B6B-4542-A357-051C6EC83BDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A03C8AD6-8B6B-4542-A357-051C6EC83BDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A03C8AD6-8B6B-4542-A357-051C6EC83BDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F26380A1-D65E-4A63-B90F-51FA7FEFBB22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F26380A1-D65E-4A63-B90F-51FA7FEFBB22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F26380A1-D65E-4A63-B90F-51FA7FEFBB22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F26380A1-D65E-4A63-B90F-51FA7FEFBB22}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
