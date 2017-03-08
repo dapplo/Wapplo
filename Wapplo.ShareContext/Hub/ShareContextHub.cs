@@ -21,25 +21,37 @@
 
 #region using
 
-using System.Collections.Generic;
+using System.ComponentModel.Composition;
+using Dapplo.Log;
+using Microsoft.AspNet.SignalR;
+using Wapplo.ShareContext.Configuration;
 
 #endregion
 
-namespace Wapplo.ShareContext
+namespace Wapplo.ShareContext.Hub
 {
 	/// <summary>
-	///     The actual context which is shared among all subscribers
+	///     The share context hub
 	/// </summary>
-	public class SharingContext
+	public class ShareContextHub : Hub<IShareContextClient>, IShareContextServer
 	{
-		/// <summary>
-		///     The application which shared this context
-		/// </summary>
-		public string Origin { get; set; }
+		private static readonly LogSource Log = new LogSource();
+
+		[Import]
+		private IShareContextConfiguration ShareContextConfiguration { get; set; }
 
 		/// <summary>
-		///     A map of name and value pairs
+		/// This method is offered as a service to the client and will share a context
 		/// </summary>
-		public IDictionary<string, string> Values { get; set; }
+		/// <param name="sharingContext">SharingContext context to share with others</param>
+		public void ShareContext(SharingContext sharingContext)
+		{
+			if (!ShareContextConfiguration.AllowShareContext)
+			{
+				return;
+			}
+			Log.Verbose().WriteLine("Context shared from {0}", sharingContext.Origin);
+			Clients.Others.ContextShared(sharingContext);
+		}
 	}
 }

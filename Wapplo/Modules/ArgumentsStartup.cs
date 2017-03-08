@@ -25,6 +25,7 @@ using System;
 using System.ComponentModel.Composition;
 using System.Windows;
 using Dapplo.Addons;
+using Wapplo.Configuration;
 using Wapplo.Utils;
 
 #endregion

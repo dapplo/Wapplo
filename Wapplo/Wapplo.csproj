@@ -205,7 +205,7 @@
   <ItemGroup>
     <Compile Include="Languages\IContextMenuTranslations.cs" />
     <Compile Include="Modules\ArgumentsStartup.cs" />
-    <Compile Include="Modules\IWebserverConfiguration.cs" />
+    <Compile Include="Configuration\IWebserverConfiguration.cs" />
     <Compile Include="Modules\SignalROwinStartup.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Ui\ExitMenuItem.cs" />
@@ -214,6 +214,7 @@
     <Compile Include="Utils\CamelCaseContractResolver.cs" />
     <Compile Include="Utils\CommandlineOptions.cs" />
     <Compile Include="Utils\ConsoleOutput.cs" />
+    <Compile Include="Utils\DapploSignalRDependencyResolver.cs" />
     <Compile Include="Utils\SignalRContractResolver.cs" />
   </ItemGroup>
   <ItemGroup>

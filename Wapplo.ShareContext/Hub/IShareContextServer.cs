@@ -19,26 +19,17 @@
 //  You should have a copy of the GNU Lesser General Public License
 //  along with Wapplo. If not, see <http://www.gnu.org/licenses/lgpl.txt>.
 
-#region using
-
-using Dapplo.Log;
-using Microsoft.AspNet.SignalR;
-
-#endregion
-
-namespace Wapplo.ShareContext
+namespace Wapplo.ShareContext.Hub
 {
 	/// <summary>
-	///     The share context hub
+	///     This is the interface which clients can call
 	/// </summary>
-	public class ShareContextHub : Hub<IShareContextClient>, IShareContextServer
+	public interface IShareContextServer
 	{
-		private static readonly LogSource Log = new LogSource();
-
-		public void ShareContext(SharingContext sharingContext)
-		{
-			Log.Verbose().WriteLine("Context shared from {0}", sharingContext.Origin);
-			Clients.Others.ContextShared(sharingContext);
-		}
+		/// <summary>
+		/// Share the SharingContext with all other clients which are connected
+		/// </summary>
+		/// <param name="sharingContext"></param>
+		void ShareContext(SharingContext sharingContext);
 	}
 }

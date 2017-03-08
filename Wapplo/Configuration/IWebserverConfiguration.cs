@@ -19,17 +19,28 @@
 //  You should have a copy of the GNU Lesser General Public License
 //  along with Wapplo. If not, see <http://www.gnu.org/licenses/lgpl.txt>.
 
-namespace Wapplo.ShareContext
+#region using
+
+using System.ComponentModel;
+using System.Net;
+using Dapplo.Ini;
+using Dapplo.Owin;
+
+#endregion
+
+namespace Wapplo.Configuration
 {
 	/// <summary>
-	///     This is the interface which the client must implement
+	///     The configuration for the web-server (owin)
 	/// </summary>
-	public interface IShareContextClient
+	[IniSection("Webserver")]
+	[Description("The configuration for the web-server (owin)")]
+	public interface IWebserverConfiguration : IIniSection, IOwinConfiguration
 	{
 		/// <summary>
-		///     A context is shared
+		/// Specify what AuthenticationScheme is used
 		/// </summary>
-		/// <param name="sharingContext"></param>
-		void ContextShared(SharingContext sharingContext);
+		[Description("Used Authentication scheme"), DefaultValue(AuthenticationSchemes.None)]
+		AuthenticationSchemes AuthenticationScheme { get; set; }
 	}
 }

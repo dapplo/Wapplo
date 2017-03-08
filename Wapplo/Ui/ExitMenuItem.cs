@@ -42,11 +42,18 @@ namespace Wapplo.Ui
 		[Import]
 		private IContextMenuTranslations ContextMenuTranslations { get; set; }
 
+		/// <summary>
+		/// Handle the click on the exit item of the context menu
+		/// </summary>
+		/// <param name="clickedItem"></param>
 		public override void Click(IMenuItem clickedItem)
 		{
 			Application.Current.Shutdown();
 		}
 
+		/// <summary>
+		/// Initialize the exit menu item
+		/// </summary>
 		public override void Initialize()
 		{
 			Id = "Z_Exit";

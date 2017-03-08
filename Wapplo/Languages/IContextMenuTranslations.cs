@@ -28,11 +28,23 @@ using Dapplo.Language;
 
 namespace Wapplo.Languages
 {
+	/// <summary>
+	/// Translations for the context menu
+	/// </summary>
 	[Language("ContextMenu")]
 	public interface IContextMenuTranslations : ILanguage, INotifyPropertyChanged
 	{
+		/// <summary>
+		/// The translation for the context menu's configure item
+		/// </summary>
 		string Configure { get; }
+		/// <summary>
+		/// The translation for the context menu's exit item
+		/// </summary>
 		string Exit { get; }
+		/// <summary>
+		/// The translation for the context menu's title
+		/// </summary>
 		string Title { get; }
 	}
 }

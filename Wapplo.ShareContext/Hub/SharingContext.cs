@@ -19,13 +19,27 @@
 //  You should have a copy of the GNU Lesser General Public License
 //  along with Wapplo. If not, see <http://www.gnu.org/licenses/lgpl.txt>.
 
-namespace Wapplo.ShareContext
+#region using
+
+using System.Collections.Generic;
+
+#endregion
+
+namespace Wapplo.ShareContext.Hub
 {
 	/// <summary>
-	///     This is the interface which clients can call
+	///     The actual context which is shared among all subscribers
 	/// </summary>
-	public interface IShareContextServer
+	public class SharingContext
 	{
-		void ShareContext(SharingContext sharingContext);
+		/// <summary>
+		///     The application which shared this context
+		/// </summary>
+		public string Origin { get; set; }
+
+		/// <summary>
+		///     A map of name and value pairs
+		/// </summary>
+		public IDictionary<string, string> Values { get; set; }
 	}
 }

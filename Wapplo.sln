@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wapplo.ShareContext", "Wapp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wapplo.ShareContext.Demo", "Wapplo.ShareContext.Demo\Wapplo.ShareContext.Demo.csproj", "{F26380A1-D65E-4A63-B90F-51FA7FEFBB22}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wapplo.WindowsServices", "Wapplo.WindowsServices\Wapplo.WindowsServices.csproj", "{359911A6-B9C2-4AEE-8EF0-BD50A9E8CDB1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{F26380A1-D65E-4A63-B90F-51FA7FEFBB22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F26380A1-D65E-4A63-B90F-51FA7FEFBB22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F26380A1-D65E-4A63-B90F-51FA7FEFBB22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{359911A6-B9C2-4AEE-8EF0-BD50A9E8CDB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{359911A6-B9C2-4AEE-8EF0-BD50A9E8CDB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{359911A6-B9C2-4AEE-8EF0-BD50A9E8CDB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{359911A6-B9C2-4AEE-8EF0-BD50A9E8CDB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

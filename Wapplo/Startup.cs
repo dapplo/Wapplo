@@ -58,12 +58,13 @@ namespace Wapplo
 			// Add the directory where scanning takes place
 #if DEBUG
 			dapplication.Bootstrapper.AddScanDirectory(@"..\..\..\Wapplo.ShareContext\bin\Debug");
+			dapplication.Bootstrapper.AddScanDirectory(@"..\..\..\Wapplo.WindowsServices\bin\Debug");
 #else
 			dapplication.Bootstrapper.AddScanDirectory(@"..\..\..\Wapplo.ShareContext\bin\Release");
+			dapplication.Bootstrapper.AddScanDirectory(@"..\..\..\Wapplo.WindowsServices\bin\DebugRelease");
 #endif
 			// Add the Wapplo modules
 			dapplication.Bootstrapper.FindAndLoadAssemblies("Wapplo.*");
-
 			dapplication.Run();
 		}
 	}

@@ -23,12 +23,14 @@
 
 using System.ComponentModel.Composition;
 using System.Net;
+using Dapplo.Addons;
 using Dapplo.Log;
 using Dapplo.Owin;
 using Microsoft.AspNet.SignalR;
 using Microsoft.Owin.Cors;
 using Newtonsoft.Json;
 using Owin;
+using Wapplo.Configuration;
 using Wapplo.Utils;
 
 #endregion
@@ -45,6 +47,9 @@ namespace Wapplo.Modules
 
 		[Import]
 		private IWebserverConfiguration WebserverConfiguration { get; set; }
+
+		[Import]
+		private IServiceLocator ServiceLocator { get; set; }
 
 		/// <summary>
 		///     Configure OWIN with:
@@ -106,7 +111,8 @@ namespace Wapplo.Modules
 			appBuilder.MapSignalR(new HubConfiguration
 			{
 				EnableJavaScriptProxies = true,
-				EnableDetailedErrors = true
+				EnableDetailedErrors = true,
+				Resolver = new DapploSignalRDependencyResolver(ServiceLocator)
 			});
 		}
 	}

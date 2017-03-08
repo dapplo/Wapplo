@@ -57,20 +57,7 @@ namespace Wapplo.Ui.ViewModels
 		[Import]
 		private IEventAggregator EventAggregator { get; set; }
 
-		[Import]
-		public IWindowManager WindowManager { get; set; }
-
-		public override void Click()
-		{
-			Log.Debug().WriteLine("Do something?");
-		}
-
-		public void Handle(string message)
-		{
-			var trayIcon = TrayIconManager.GetTrayIconFor(this);
-			trayIcon.ShowBalloonTip("Event", message);
-		}
-
+		/// <inheritdoc />
 		protected override void OnActivate()
 		{
 			base.OnActivate();

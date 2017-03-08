@@ -41,6 +41,9 @@ namespace Wapplo.Ui
 		[Import]
 		private IContextMenuTranslations ContextMenuTranslations { get; set; }
 
+		/// <summary>
+		/// Create the title of the context menu
+		/// </summary>
 		public override void Initialize()
 		{
 			Id = "A_Title";
@@ -50,7 +53,7 @@ namespace Wapplo.Ui
 
 			Icon = new PackIconMaterial
 			{
-				Kind = PackIconMaterialKind.Exclamation
+				Kind = PackIconMaterialKind.Web
 			};
 			this.ApplyIconForegroundColor(Brushes.DarkRed);
 		}
