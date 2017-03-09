@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Runtime.Serialization;
 using Dapplo.Ini;
 
 namespace Wapplo.ShareContext.Configuration
@@ -13,7 +14,7 @@ namespace Wapplo.ShareContext.Configuration
 		/// <summary>
 		/// Specify if web applications are allowed to share a context, default is true
 		/// </summary>
-		[DefaultValue(true), Description("Specify if web applications are allowed to share a context")]
+		[DefaultValue(true), Description("Specify if web applications are allowed to share a context"), DataMember(EmitDefaultValue = true)]
 		bool AllowShareContext { get; set; }
 	}
 }

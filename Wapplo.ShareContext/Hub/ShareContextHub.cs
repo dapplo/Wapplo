@@ -46,7 +46,7 @@ namespace Wapplo.ShareContext.Hub
 		/// <param name="sharingContext">SharingContext context to share with others</param>
 		public void ShareContext(SharingContext sharingContext)
 		{
-			if (!ShareContextConfiguration.AllowShareContext)
+			if (ShareContextConfiguration.AllowShareContext != true)
 			{
 				return;
 			}

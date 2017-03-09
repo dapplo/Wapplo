@@ -98,8 +98,12 @@
       <HintPath>..\packages\Dapplo.Log.Loggers.1.0.23\lib\net45\Dapplo.Log.Loggers.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Dapplo.Owin, Version=0.1.26.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.Owin.0.1.26\lib\net45\Dapplo.Owin.dll</HintPath>
+    <Reference Include="Dapplo.Owin, Version=0.1.32.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.Owin.0.1.32\lib\net45\Dapplo.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Dapplo.SignalR, Version=0.1.32.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.SignalR.0.1.32\lib\net45\Dapplo.SignalR.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Dapplo.Utils, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -206,16 +210,13 @@
     <Compile Include="Languages\IContextMenuTranslations.cs" />
     <Compile Include="Modules\ArgumentsStartup.cs" />
     <Compile Include="Configuration\IWebserverConfiguration.cs" />
-    <Compile Include="Modules\SignalROwinStartup.cs" />
+    <Compile Include="Modules\OwinStartup.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Ui\ExitMenuItem.cs" />
     <Compile Include="Ui\TitleMenuItem.cs" />
     <Compile Include="Ui\ViewModels\WapploTrayIconViewModel.cs" />
-    <Compile Include="Utils\CamelCaseContractResolver.cs" />
     <Compile Include="Utils\CommandlineOptions.cs" />
     <Compile Include="Utils\ConsoleOutput.cs" />
-    <Compile Include="Utils\DapploSignalRDependencyResolver.cs" />
-    <Compile Include="Utils\SignalRContractResolver.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -238,6 +239,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Languages\language-en-US.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Html\Error\404.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

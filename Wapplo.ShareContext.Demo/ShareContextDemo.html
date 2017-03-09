@@ -20,9 +20,21 @@
 		$.connection.hub.url = "http://localhost:9277/signalr";
 		// Enable logging
 		$.connection.hub.logging = true;
-		var shareContextHub = $.connection.shareContextHub;
+
 		var statusDiv = $("#status");
 
+		var shareContextHub = $.connection.shareContextHub;
+
+		/**
+		* Example for the windows services
+		**/
+		var windowsServicesHub = $.connection.windowsServicesHub;
+		windowsServicesHub.client.clipboardChanged = function (clipboardFormats) {
+			$("#output").append("Clipboard: <strong>" + clipboardFormats + "</strong></br>");
+		};
+		/**
+		* Example for the share context
+		**/
 		shareContextHub.client.contextShared = function (sharedContext) {
 			$("#output").append(sharedContext.values.time + "<strong>" + sharedContext.origin + "</strong></br>");
 		};
@@ -43,6 +55,7 @@
 
 		$.connection.hub.start()
 			.done(function () {
+				windowsServicesHub.server.monitorClipboard(true);
 				statusDiv.text("connected.");
 				$.connection.hub.connectionSlow(function() {
 					statusDiv.text("Slow connection....");

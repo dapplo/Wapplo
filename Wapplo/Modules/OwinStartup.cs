@@ -19,24 +19,20 @@
 //  You should have a copy of the GNU Lesser General Public License
 //  along with Wapplo. If not, see <http://www.gnu.org/licenses/lgpl.txt>.
 
-namespace Wapplo.WindowsServices.Hub
+#region using
+
+using Dapplo.Owin;
+using Owin;
+
+#endregion
+
+namespace Wapplo.Modules
 {
 	/// <summary>
-	/// Windows services made available to clients
+	///     Start Owin with defaults
 	/// </summary>
-	public interface IWindowsServicesServer
+	[OwinModule]
+	public class OwinStartup : DefaultOwinModule
 	{
-		/// <summary>
-		/// Copy text to the clipboard
-		/// </summary>
-		/// <param name="origin">Where does the clipboard content come from</param>
-		/// <param name="text">String to place onto the clipboard</param>
-		void CopyToClipboard(string origin, string text);
-
-		/// <summary>
-		/// Enable or disable clipboard monitoring for the client
-		/// </summary>
-		/// <param name="enable">bool to enable / disable clipboard monitoring for the client</param>
-		void MonitorClipboard(bool enable);
 	}
 }

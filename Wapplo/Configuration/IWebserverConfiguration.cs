@@ -25,6 +25,7 @@ using System.ComponentModel;
 using System.Net;
 using Dapplo.Ini;
 using Dapplo.Owin;
+using Dapplo.SignalR;
 
 #endregion
 
@@ -35,12 +36,7 @@ namespace Wapplo.Configuration
 	/// </summary>
 	[IniSection("Webserver")]
 	[Description("The configuration for the web-server (owin)")]
-	public interface IWebserverConfiguration : IIniSection, IOwinConfiguration
+	public interface IWebserverConfiguration : IIniSection, IOwinConfiguration, ISignalRConfiguration
 	{
-		/// <summary>
-		/// Specify what AuthenticationScheme is used
-		/// </summary>
-		[Description("Used Authentication scheme"), DefaultValue(AuthenticationSchemes.None)]
-		AuthenticationSchemes AuthenticationScheme { get; set; }
 	}
 }
