@@ -24,11 +24,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Linq;
-using System.Reactive.Concurrency;
-using System.Reactive.Linq;
 using System.Reactive.Subjects;
-using System.Threading;
-using Dapplo.Windows.Clipboard;
 using Microsoft.AspNet.SignalR;
 using Wapplo.WindowsServices.Configuration;
 
@@ -46,7 +42,6 @@ namespace Wapplo.WindowsServices.Hub
 
 		[Import("ClipboardUpdates")]
 		private ISubject<IEnumerable<string>> ClipboardUpdates { get; set; }
-
 
 		/// <summary>
 		/// Implement the CopyToClipboard service

@@ -23,9 +23,11 @@
 
 using System.ComponentModel;
 using System.Net;
+using System.Runtime.Serialization;
 using Dapplo.Ini;
 using Dapplo.Owin;
 using Dapplo.SignalR;
+using Dapplo.SignalR.Configuration;
 
 #endregion
 
@@ -38,5 +40,28 @@ namespace Wapplo.Configuration
 	[Description("The configuration for the web-server (owin)")]
 	public interface IWebserverConfiguration : IIniSection, IOwinConfiguration, ISignalRConfiguration
 	{
+		/// <summary>
+		/// Enable serving of files from a html sub folder, this can be used to allow error pages.
+		/// </summary>
+		[Description("Enable serving of files from a html sub folder, this can be used to allow error pages"), DefaultValue(true), DataMember(EmitDefaultValue = false)]
+		bool EnableFileServer { get; set; }
+
+		/// <summary>
+		/// Set the type of file server which is used
+		/// </summary>
+		[Description("Set the file-server type, can be Embedded or Physical"), DefaultValue(FileServerTypes.Physical), DataMember(EmitDefaultValue = false)]
+		FileServerTypes FileServerType { get; set; }
+
+		/// <summary>
+		/// Whenever the file server is enabled, this is the uri path location where it responds to
+		/// </summary>
+		[Description("Uri path where the file server is responding to"), DefaultValue("/html"), DataMember(EmitDefaultValue = false)]
+		string FileServerPath { get; set; }
+
+		/// <summary>
+		/// Whenever the file server is enabled, this describes where files are located
+		/// </summary>
+		[Description("Path or namespace where the physical or embedded file server loads the data from."), DefaultValue("Html"), DataMember(EmitDefaultValue = false)]
+		string FileServerLocation { get; set; }
 	}
 }

@@ -27,7 +27,7 @@ namespace Wapplo.WindowsServices
 		/// </summary>
 		public void Start()
 		{
-			if (WindowsServicesConfiguration.AllowClipboardMonitoring)
+			if (false && WindowsServicesConfiguration.AllowClipboardMonitoring)
 			{
 				// TODO: Fix STA Thread needed
 				_clipboardMonitor = ClipboardMonitor.ClipboardUpdateEvents.Subscribe(args =>
