@@ -1,7 +1,7 @@
 # Wapplo
 Extend your Web-Applications with desktop services
 
-Wapplo is currently in a concept phase, the name stands for Web APPlication building bLOcks.
+Wapplo is currently in a concept phase, the name stands for Web APPlication LOgic.
 
 With this application it will be possible to extend web applications, meaning web sites (HTML) in the browser, with services which normally are only available to desktop applications. This was especially written for usage in companies, where currently all (or most) applications are web based, but have a need which is very hard to cover.
 
