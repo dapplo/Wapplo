@@ -23,7 +23,7 @@
 
 using System;
 using System.Windows;
-using Dapplo.CaliburnMicro;
+using Dapplo.CaliburnMicro.Dapp;
 using Dapplo.Log;
 using Dapplo.Log.Loggers;
 

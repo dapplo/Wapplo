@@ -26,7 +26,6 @@ using System.IO;
 using CommandLine;
 using Dapplo.Ini;
 using Wapplo.Configuration;
-using Wapplo.Modules;
 
 #endregion
 

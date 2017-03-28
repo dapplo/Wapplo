@@ -22,11 +22,9 @@
 #region using
 
 using System.ComponentModel;
-using System.Net;
 using System.Runtime.Serialization;
 using Dapplo.Ini;
-using Dapplo.Owin;
-using Dapplo.SignalR;
+using Dapplo.Owin.Configuration;
 using Dapplo.SignalR.Configuration;
 
 #endregion
