@@ -77,12 +77,12 @@ namespace Wapplo.Ui.ViewModels
 			// Make sure the margin is set, do this AFTER the icon are set
 			items.ApplyIconMargin(new Thickness(2, 2, 2, 2));
 
-			Icon = new PackIconMaterial
+			SetIcon(new PackIconMaterial
 			{
 				Kind = PackIconMaterialKind.Web,
 				Background = Brushes.White,
 				Foreground = Brushes.Black
-			};
+			});
 			Show();
 			EventAggregator.Subscribe(this);
 		}

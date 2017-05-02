@@ -24,48 +24,61 @@ using System.Collections.Generic;
 using Dapplo.Addons;
 using Wapplo.WindowsServices.Configuration;
 using System.ComponentModel.Composition;
+using System.Reactive.Linq;
 using System.Reactive.Subjects;
-using Dapplo.Windows.Clipboard;
+using System.Threading;
+using Dapplo.Clipboard;
 
 namespace Wapplo.WindowsServices
 {
-	/// <summary>
-	/// Make it possible to subscribe to events
-	/// </summary>
-	[StartupAction, ShutdownAction]
-	public class WindowsServicesStartup : IStartupAction, IShutdownAction
-	{
-		[Import]
-		private IWindowsServicesConfiguration WindowsServicesConfiguration { get; set; }
+    /// <summary>
+    /// Make it possible to subscribe to events
+    /// </summary>
+    [StartupAction, ShutdownAction]
+    public class WindowsServicesStartup : IStartupAction, IShutdownAction
+    {
+        private readonly IWindowsServicesConfiguration _windowsServicesConfiguration;
 
-		[Export("ClipboardUpdates")]
-		private ISubject<IEnumerable<string>> ClipboardUpdates { get; } = new Subject<IEnumerable<string>>();
+        [Export("ClipboardUpdates")]
+        private ISubject<IEnumerable<string>> ClipboardUpdates { get; } = new Subject<IEnumerable<string>>();
 
-		private IDisposable _clipboardMonitor;
+        private IDisposable _clipboardMonitor;
+        private readonly SynchronizationContext _context;
 
-		/// <summary>
-		/// Start will register all needed services
-		/// </summary>
-		public void Start()
-		{
-			// TODO: Doesn't work yet in a non STA thread
-			if (false && WindowsServicesConfiguration.AllowClipboardMonitoring)
-			{
-				// TODO: Fix STA Thread needed
-				_clipboardMonitor = ClipboardMonitor.ClipboardUpdateEvents.Subscribe(args =>
-				{
-					ClipboardUpdates.OnNext(args.Formats);
-				});
+        /// <summary>
+        /// Importing constructor
+        /// </summary>
+        /// <param name="windowsServicesConfiguration"></param>
+        [ImportingConstructor]
+        public WindowsServicesStartup(IWindowsServicesConfiguration windowsServicesConfiguration)
+        {
+            _windowsServicesConfiguration = windowsServicesConfiguration;
+            _context = SynchronizationContext.Current;
 
-			}
-		}
+        }
+        /// <summary>
+        /// Start will register all needed services
+        /// </summary>
+        public void Start()
+        {
+            // TODO: Doesn't work yet in a non STA thread
+            if (_windowsServicesConfiguration.AllowClipboardMonitoring)
+            {
+                // TODO: Fix STA Thread needed
+                _clipboardMonitor = ClipboardMonitor.OnPasted.SubscribeOn(_context).Subscribe(clipboardContents =>
+                {
+                    ClipboardUpdates.OnNext(clipboardContents.Formats);
+                });
 
-		/// <summary>
-		/// Dispose the Subscription when stopping
-		/// </summary>
-		public void Shutdown()
-		{
-			_clipboardMonitor?.Dispose();
-		}
-	}
+            }
+        }
+
+        /// <summary>
+        /// Dispose the Subscription when stopping
+        /// </summary>
+        public void Shutdown()
+        {
+            _clipboardMonitor?.Dispose();
+        }
+    }
 }
