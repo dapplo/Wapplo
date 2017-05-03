@@ -22,6 +22,7 @@
 #region using
 
 using System;
+using System.Threading;
 using System.Windows;
 using Dapplo.CaliburnMicro.Dapp;
 using Dapplo.Log;
@@ -31,41 +32,41 @@ using Dapplo.Log.Loggers;
 
 namespace Wapplo
 {
-	/// <summary>
-	///     This takes care or starting Wapplo
-	/// </summary>
-	public static class Startup
-	{
-		/// <summary>
-		///     Start Wapplo Dapplication
-		/// </summary>
-		[STAThread]
-		public static void Main()
-		{
+    /// <summary>
+    ///     This takes care or starting Wapplo
+    /// </summary>
+    public static class Startup
+    {
+        /// <summary>
+        ///     Start Wapplo Dapplication
+        /// </summary>
+        [STAThread]
+        public static void Main()
+        {
 #if DEBUG
-			// Initialize a debug logger for Dapplo packages
-			LogSettings.RegisterDefaultLogger<DebugLogger>(LogLevels.Verbose);
+            // Initialize a debug logger for Dapplo packages
+            LogSettings.RegisterDefaultLogger<DebugLogger>(LogLevels.Verbose);
 #endif
-			var dapplication = new Dapplication("Wapplo", "BF63D6C4-5F1A-4D43-87C7-0607EB50D0D0")
-			{
-				ShutdownMode = ShutdownMode.OnExplicitShutdown
-			};
+            var dapplication = new Dapplication("Wapplo", "BF63D6C4-5F1A-4D43-87C7-0607EB50D0D0")
+            {
+                ShutdownMode = ShutdownMode.OnExplicitShutdown
+            };
 
-			dapplication.Bootstrapper.AddScanDirectory(@"modules");
+            dapplication.Bootstrapper.AddScanDirectory(@"modules");
 
-			// Add some DLL's we need
-			dapplication.Bootstrapper.FindAndLoadAssemblies("Dapplo*");
-			// Add the directory where scanning takes place
+            // Add some DLL's we need
+            dapplication.Bootstrapper.FindAndLoadAssemblies("Dapplo*");
+            // Add the directory where scanning takes place
 #if DEBUG
-			dapplication.Bootstrapper.AddScanDirectory(@"..\..\..\Wapplo.ShareContext\bin\Debug");
-			dapplication.Bootstrapper.AddScanDirectory(@"..\..\..\Wapplo.WindowsServices\bin\Debug");
+            dapplication.Bootstrapper.AddScanDirectory(@"..\..\..\Wapplo.ShareContext\bin\Debug");
+            dapplication.Bootstrapper.AddScanDirectory(@"..\..\..\Wapplo.WindowsServices\bin\Debug");
 #else
-			dapplication.Bootstrapper.AddScanDirectory(@"..\..\..\Wapplo.ShareContext\bin\Release");
-			dapplication.Bootstrapper.AddScanDirectory(@"..\..\..\Wapplo.WindowsServices\bin\DebugRelease");
+            dapplication.Bootstrapper.AddScanDirectory(@"..\..\..\Wapplo.ShareContext\bin\Release");
+            dapplication.Bootstrapper.AddScanDirectory(@"..\..\..\Wapplo.WindowsServices\bin\DebugRelease");
 #endif
-			// Add the Wapplo modules
-			dapplication.Bootstrapper.FindAndLoadAssemblies("Wapplo.*");
-			dapplication.Run();
-		}
-	}
+            // Add the Wapplo modules
+            dapplication.Bootstrapper.FindAndLoadAssemblies("Wapplo.*");
+            dapplication.Run();
+        }
+    }
 }

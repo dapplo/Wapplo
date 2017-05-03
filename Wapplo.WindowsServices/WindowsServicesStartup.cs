@@ -27,7 +27,8 @@ using System.ComponentModel.Composition;
 using System.Reactive.Linq;
 using System.Reactive.Subjects;
 using System.Threading;
-using Dapplo.Clipboard;
+using Dapplo.Log;
+using Dapplo.Windows.Clipboard;
 
 namespace Wapplo.WindowsServices
 {
@@ -37,40 +38,42 @@ namespace Wapplo.WindowsServices
     [StartupAction, ShutdownAction]
     public class WindowsServicesStartup : IStartupAction, IShutdownAction
     {
+        private static readonly LogSource Log = new LogSource();
         private readonly IWindowsServicesConfiguration _windowsServicesConfiguration;
 
         [Export("ClipboardUpdates")]
         private ISubject<IEnumerable<string>> ClipboardUpdates { get; } = new Subject<IEnumerable<string>>();
 
         private IDisposable _clipboardMonitor;
-        private readonly SynchronizationContext _context;
+        private readonly SynchronizationContext _uiSynchronizationContext;
 
         /// <summary>
         /// Importing constructor
         /// </summary>
-        /// <param name="windowsServicesConfiguration"></param>
+        /// <param name="windowsServicesConfiguration">IWindowsServicesConfiguration</param>
+        /// <param name="uiSynchronizationContext">SynchronizationContext</param>
         [ImportingConstructor]
-        public WindowsServicesStartup(IWindowsServicesConfiguration windowsServicesConfiguration)
+        public WindowsServicesStartup(
+            IWindowsServicesConfiguration windowsServicesConfiguration,
+            [Import("ui", typeof(SynchronizationContext))]SynchronizationContext uiSynchronizationContext)
         {
             _windowsServicesConfiguration = windowsServicesConfiguration;
-            _context = SynchronizationContext.Current;
-
+            _uiSynchronizationContext = uiSynchronizationContext;
         }
         /// <summary>
         /// Start will register all needed services
         /// </summary>
         public void Start()
         {
-            // TODO: Doesn't work yet in a non STA thread
-            if (_windowsServicesConfiguration.AllowClipboardMonitoring)
+            if (!_windowsServicesConfiguration.AllowClipboardMonitoring)
             {
-                // TODO: Fix STA Thread needed
-                _clipboardMonitor = ClipboardMonitor.OnPasted.SubscribeOn(_context).Subscribe(clipboardContents =>
-                {
-                    ClipboardUpdates.OnNext(clipboardContents.Formats);
-                });
-
+                return;
             }
+            _clipboardMonitor = ClipboardMonitor.OnUpdate.SubscribeOn(_uiSynchronizationContext).Subscribe(clipboardContents =>
+            {
+                ClipboardUpdates.OnNext(clipboardContents.Formats);
+            });
+            Log.Info().WriteLine("Registered to clipboard updates.");
         }
 
         /// <summary>

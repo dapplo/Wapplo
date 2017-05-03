@@ -36,10 +36,6 @@
       <HintPath>..\packages\Dapplo.Addons.0.4.7\lib\net45\Dapplo.Addons.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Dapplo.Clipboard, Version=0.4.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.Clipboard.0.4.8\lib\net45\Dapplo.Clipboard.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Dapplo.Ini, Version=0.5.17.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapplo.Ini.0.5.17\lib\net45\Dapplo.Ini.dll</HintPath>
       <Private>True</Private>
@@ -56,12 +52,16 @@
       <HintPath>..\packages\Dapplo.Utils.1.0.132\lib\net45\Dapplo.Utils.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Dapplo.Windows, Version=0.4.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.Windows.0.4.8\lib\net45\Dapplo.Windows.dll</HintPath>
+    <Reference Include="Dapplo.Windows, Version=0.4.13.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.Windows.0.4.13\lib\net45\Dapplo.Windows.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Dapplo.WinMessages, Version=0.4.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.WinMessages.0.4.8\lib\net45\Dapplo.WinMessages.dll</HintPath>
+    <Reference Include="Dapplo.Windows.Clipboard, Version=0.4.13.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.Windows.Clipboard.0.4.13\lib\net45\Dapplo.Windows.Clipboard.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Dapplo.Windows.Messages, Version=0.4.13.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.Windows.Messages.0.4.13\lib\net45\Dapplo.Windows.Messages.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
