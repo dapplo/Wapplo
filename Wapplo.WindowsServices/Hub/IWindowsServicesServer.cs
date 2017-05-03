@@ -21,22 +21,29 @@
 
 namespace Wapplo.WindowsServices.Hub
 {
-	/// <summary>
-	/// Windows services made available to clients
-	/// </summary>
-	public interface IWindowsServicesServer
-	{
-		/// <summary>
-		/// Copy text to the clipboard
-		/// </summary>
-		/// <param name="origin">Where does the clipboard content come from</param>
-		/// <param name="text">String to place onto the clipboard</param>
-		void CopyToClipboard(string origin, string text);
+    /// <summary>
+    /// Windows services made available to clients
+    /// </summary>
+    public interface IWindowsServicesServer
+    {
+        /// <summary>
+        /// Copy text to the clipboard
+        /// </summary>
+        /// <param name="origin">Where does the clipboard content come from</param>
+        /// <param name="text">String to place onto the clipboard</param>
+        /// <param name="format">Format to paste with</param>
+        void CopyToClipboard(string origin, string text, string format = "CF_UNICODETEXT");
 
-		/// <summary>
-		/// Enable or disable clipboard monitoring for the client
-		/// </summary>
-		/// <param name="enable">bool to enable / disable clipboard monitoring for the client</param>
-		void MonitorClipboard(bool enable);
-	}
+        /// <summary>
+        /// Enable or disable clipboard monitoring for the client
+        /// </summary>
+        /// <param name="enable">bool to enable / disable clipboard monitoring for the client</param>
+        void MonitorClipboard(bool enable);
+
+        /// <summary>
+        /// Get the clipboard contents for the specified content
+        /// </summary>
+        /// <param name="format">Clipboard format for the content to retrieve</param>
+        string GetClipboardContent(string format = "CF_UNICODETEXT");
+    }
 }

@@ -29,14 +29,21 @@
 		* Example for the windows services
 		**/
 		var windowsServicesHub = $.connection.windowsServicesHub;
-		windowsServicesHub.client.clipboardChanged = function (clipboardFormats) {
-			$("#output").append("Clipboard: <strong>" + clipboardFormats + "</strong></br>");
+		windowsServicesHub.client.clipboardChanged = function (clipboardContents) {
+			$("#output").append("Clipboard: <strong>ID=" + clipboardContents.id + ",hWnd:" + clipboardContents.ownerHandle.value + ", formats=" + clipboardContents.formats + "</strong></br>");
 		};
 		/**
 		* Example for the share context
 		**/
 		shareContextHub.client.contextShared = function (sharedContext) {
-			$("#output").append(sharedContext.values.time + "<strong>" + sharedContext.origin + "</strong></br>");
+			$("#output").append(" " + sharedContext.values.time + "<strong>" + sharedContext.origin + "</strong>:");
+			for(var index in sharedContext.values) {
+				if(index === "time") {
+					continue;
+				}
+				$("#output").append(index + "=" + sharedContext.values[index]);
+			}
+			$("#output").append("</br>");
 		};
 		$("#share").click(function () {
 			var now = new Date();

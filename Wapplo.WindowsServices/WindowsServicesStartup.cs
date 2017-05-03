@@ -20,7 +20,6 @@
 //  along with Wapplo. If not, see <http://www.gnu.org/licenses/lgpl.txt>.
 
 using System;
-using System.Collections.Generic;
 using Dapplo.Addons;
 using Wapplo.WindowsServices.Configuration;
 using System.ComponentModel.Composition;
@@ -41,8 +40,8 @@ namespace Wapplo.WindowsServices
         private static readonly LogSource Log = new LogSource();
         private readonly IWindowsServicesConfiguration _windowsServicesConfiguration;
 
-        [Export("ClipboardUpdates")]
-        private ISubject<IEnumerable<string>> ClipboardUpdates { get; } = new Subject<IEnumerable<string>>();
+        [Export]
+        private ISubject<ClipboardContents> ClipboardUpdates { get; } = new Subject<ClipboardContents>();
 
         private IDisposable _clipboardMonitor;
         private readonly SynchronizationContext _uiSynchronizationContext;
@@ -71,7 +70,7 @@ namespace Wapplo.WindowsServices
             }
             _clipboardMonitor = ClipboardMonitor.OnUpdate.SubscribeOn(_uiSynchronizationContext).Subscribe(clipboardContents =>
             {
-                ClipboardUpdates.OnNext(clipboardContents.Formats);
+                ClipboardUpdates.OnNext(clipboardContents);
             });
             Log.Info().WriteLine("Registered to clipboard updates.");
         }

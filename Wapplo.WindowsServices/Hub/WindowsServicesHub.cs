@@ -25,6 +25,7 @@ using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Linq;
 using System.Reactive.Subjects;
+using Dapplo.Windows.Clipboard;
 using Microsoft.AspNet.SignalR;
 using Wapplo.WindowsServices.Configuration;
 
@@ -40,24 +41,20 @@ namespace Wapplo.WindowsServices.Hub
 		[Import]
 		private IWindowsServicesConfiguration WindowsServicesConfiguration { get; set; }
 
-		[Import("ClipboardUpdates")]
-		private ISubject<IEnumerable<string>> ClipboardUpdates { get; set; }
+		[Import]
+		private ISubject<ClipboardContents> ClipboardUpdates { get; set; }
 
-		/// <summary>
-		/// Implement the CopyToClipboard service
-		/// </summary>
-		/// <param name="origin">string with the information where the clipboard comes from</param>
-		/// <param name="text">The actual string</param>
-		public void CopyToClipboard(string origin, string text)
+        /// <inheritdoc />
+        public void CopyToClipboard(string origin, string text, string format = "CF_UNICODETEXT")
 		{
-			throw new NotSupportedException();
+            using (ClipboardNative.Lock())
+            {
+                ClipboardNative.Put(text, format);
+            }
 		}
 
-		/// <summary>
-		/// Have the client monitor clipboard changes
-		/// </summary>
-		/// <param name="enable">bool</param>
-		public void MonitorClipboard(bool enable)
+        /// <inheritdoc />
+        public void MonitorClipboard(bool enable)
 		{
 			if (!WindowsServicesConfiguration.AllowClipboardMonitoring)
 			{
@@ -72,9 +69,9 @@ namespace Wapplo.WindowsServices.Hub
 					return;
 				}
 				// Create a subscription, which will inform of clipboard updates
-				var subscription = ClipboardUpdates.Subscribe(formats =>
+				var subscription = ClipboardUpdates.Subscribe(contents =>
 				{
-					Clients.Client(Context.ConnectionId).ClipboardChanged(formats.ToList());
+					Clients.Client(Context.ConnectionId).ClipboardChanged(contents);
 				});
 				ClipboardSubscriptions[Context.ConnectionId] = subscription;
 			}
@@ -84,5 +81,14 @@ namespace Wapplo.WindowsServices.Hub
 			}
 
 		}
+
+	    /// <inheritdoc />
+	    public string GetClipboardContent(string format = "CF_UNICODETEXT")
+	    {
+	        using (ClipboardNative.Lock())
+	        {
+	            return ClipboardNative.GetAsString(format);
+	        }
+	    }
 	}
 }

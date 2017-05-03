@@ -19,19 +19,19 @@
 //  You should have a copy of the GNU Lesser General Public License
 //  along with Wapplo. If not, see <http://www.gnu.org/licenses/lgpl.txt>.
 
-using System.Collections.Generic;
+using Dapplo.Windows.Clipboard;
 
 namespace Wapplo.WindowsServices.Hub
 {
-	/// <summary>
-	/// Methods which clients "can" implement
-	/// </summary>
-	public interface IWindowsServicesClient
-	{
-		/// <summary>
-		/// Call the client when the clipboard content has changed
-		/// </summary>
-		/// <param name="clipboardFormats"></param>
-		void ClipboardChanged(IList<string> clipboardFormats);
-	}
+    /// <summary>
+    /// Methods which clients "can" implement
+    /// </summary>
+    public interface IWindowsServicesClient
+    {
+        /// <summary>
+        /// Call the client when the clipboard content has changed
+        /// </summary>
+        /// <param name="contents">ClipboardContents</param>
+        void ClipboardChanged(ClipboardContents contents);
+    }
 }
