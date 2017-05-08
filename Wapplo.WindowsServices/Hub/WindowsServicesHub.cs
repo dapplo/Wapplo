@@ -31,64 +31,64 @@ using Wapplo.WindowsServices.Configuration;
 
 namespace Wapplo.WindowsServices.Hub
 {
-	/// <summary>
-	/// The Signal-R hub for making Windows services available
-	/// </summary>
-	public class WindowsServicesHub : Hub<IWindowsServicesClient>, IWindowsServicesServer
-	{
-		private static readonly IDictionary<string, IDisposable> ClipboardSubscriptions = new ConcurrentDictionary<string, IDisposable>();
+    /// <summary>
+    /// The Signal-R hub for making Windows services available
+    /// </summary>
+    public class WindowsServicesHub : Hub<IWindowsServicesClient>, IWindowsServicesServer
+    {
+        private static readonly IDictionary<string, IDisposable> ClipboardSubscriptions = new ConcurrentDictionary<string, IDisposable>();
 
-		[Import]
-		private IWindowsServicesConfiguration WindowsServicesConfiguration { get; set; }
+        [Import]
+        private IWindowsServicesConfiguration WindowsServicesConfiguration { get; set; }
 
-		[Import]
-		private ISubject<ClipboardContents> ClipboardUpdates { get; set; }
+        [Import]
+        private ISubject<ClipboardContents> ClipboardUpdates { get; set; }
 
         /// <inheritdoc />
         public void CopyToClipboard(string origin, string text, string format = "CF_UNICODETEXT")
-		{
+        {
             using (ClipboardNative.Lock())
             {
                 ClipboardNative.Put(text, format);
             }
-		}
+        }
 
         /// <inheritdoc />
         public void MonitorClipboard(bool enable)
-		{
-			if (!WindowsServicesConfiguration.AllowClipboardMonitoring)
-			{
-				throw new NotSupportedException();
-			}
+        {
+            if (!WindowsServicesConfiguration.AllowClipboardMonitoring)
+            {
+                throw new NotSupportedException();
+            }
 
-			if (enable)
-			{
-				if (ClipboardSubscriptions.ContainsKey(Context.ConnectionId))
-				{
-					// Do nothing, already subscribed
-					return;
-				}
-				// Create a subscription, which will inform of clipboard updates
-				var subscription = ClipboardUpdates.Subscribe(contents =>
-				{
-					Clients.Client(Context.ConnectionId).ClipboardChanged(contents);
-				});
-				ClipboardSubscriptions[Context.ConnectionId] = subscription;
-			}
-			else if (ClipboardSubscriptions.ContainsKey(Context.ConnectionId))
-			{
-				ClipboardSubscriptions[Context.ConnectionId].Dispose();
-			}
+            if (enable)
+            {
+                if (ClipboardSubscriptions.ContainsKey(Context.ConnectionId))
+                {
+                    // Do nothing, already subscribed
+                    return;
+                }
+                // Create a subscription, which will inform of clipboard updates
+                var subscription = ClipboardUpdates.Subscribe(contents =>
+                {
+                    Clients.Client(Context.ConnectionId).ClipboardChanged(contents);
+                });
+                ClipboardSubscriptions[Context.ConnectionId] = subscription;
+            }
+            else if (ClipboardSubscriptions.ContainsKey(Context.ConnectionId))
+            {
+                ClipboardSubscriptions[Context.ConnectionId].Dispose();
+            }
 
-		}
+        }
 
-	    /// <inheritdoc />
-	    public string GetClipboardContent(string format = "CF_UNICODETEXT")
-	    {
-	        using (ClipboardNative.Lock())
-	        {
-	            return ClipboardNative.GetAsString(format);
-	        }
-	    }
-	}
+        /// <inheritdoc />
+        public string GetClipboardContent(string format = "CF_UNICODETEXT")
+        {
+            using (ClipboardNative.Lock())
+            {
+                return ClipboardNative.GetAsString(format);
+            }
+        }
+    }
 }
