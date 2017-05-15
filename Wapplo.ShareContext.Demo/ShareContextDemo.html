@@ -25,6 +25,26 @@
 
 		var shareContextHub = $.connection.shareContextHub;
 
+		var demoCard = {
+			"type": "AdaptiveCard",
+			"version": "1.0",
+			"body": [
+				{
+					"type": "Container",
+					"items": [
+						{
+							"type": "TextBlock",
+							"text": "Meow!"
+						},
+						{
+							"type": "Image",
+							"url": "http://adaptivecards.io/api/cat"
+						}
+					]
+				}
+			]
+		};
+			
 		/**
 		* Example for the windows services
 		**/
@@ -58,11 +78,14 @@
 					}
 				}
 			);
+
 		});
 
 		$.connection.hub.start()
 			.done(function () {
 				windowsServicesHub.server.monitorClipboard(true);
+				windowsServicesHub.server.showAdaptiveCard(demoCard);
+
 				statusDiv.text("connected.");
 				$.connection.hub.connectionSlow(function() {
 					statusDiv.text("Slow connection....");

@@ -19,6 +19,8 @@
 //  You should have a copy of the GNU Lesser General Public License
 //  along with Wapplo. If not, see <http://www.gnu.org/licenses/lgpl.txt>.
 
+using AdaptiveCards;
+
 namespace Wapplo.WindowsServices.Hub
 {
     /// <summary>
@@ -45,5 +47,12 @@ namespace Wapplo.WindowsServices.Hub
         /// </summary>
         /// <param name="format">Clipboard format for the content to retrieve</param>
         string GetClipboardContent(string format = "CF_UNICODETEXT");
+
+
+        /// <summary>
+        /// Show an adaptive card
+        /// </summary>
+        /// <param name="toast"></param>
+        void ShowAdaptiveCard(AdaptiveCard toast);
     }
 }

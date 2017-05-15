@@ -25,8 +25,13 @@ using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Linq;
 using System.Reactive.Subjects;
+using AdaptiveCards;
+using Dapplo.CaliburnMicro.Cards.ViewModels;
+using Dapplo.CaliburnMicro.Toasts;
+using Dapplo.Utils;
 using Dapplo.Windows.Clipboard;
 using Microsoft.AspNet.SignalR;
+using Newtonsoft.Json;
 using Wapplo.WindowsServices.Configuration;
 
 namespace Wapplo.WindowsServices.Hub
@@ -42,6 +47,9 @@ namespace Wapplo.WindowsServices.Hub
         private IWindowsServicesConfiguration WindowsServicesConfiguration { get; set; }
 
         [Import]
+        private ToastConductor ToastConductor { get; set; }
+
+        [Import]
         private ISubject<ClipboardContents> ClipboardUpdates { get; set; }
 
         /// <inheritdoc />
@@ -49,7 +57,7 @@ namespace Wapplo.WindowsServices.Hub
         {
             using (ClipboardNative.Lock())
             {
-                ClipboardNative.Put(text, format);
+                ClipboardNative.SetAsString(text, format);
             }
         }
 
@@ -89,6 +97,12 @@ namespace Wapplo.WindowsServices.Hub
             {
                 return ClipboardNative.GetAsString(format);
             }
+        }
+
+        /// <inheritdoc />
+        public void ShowAdaptiveCard(AdaptiveCard adaptiveCard)
+        {
+            UiContext.RunOn(() => ToastConductor.ActivateItem(new AdaptiveCardViewModel(adaptiveCard)));
         }
     }
 }
