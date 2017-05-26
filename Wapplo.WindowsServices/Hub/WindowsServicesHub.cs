@@ -23,7 +23,6 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
-using System.Linq;
 using System.Reactive.Subjects;
 using AdaptiveCards;
 using Dapplo.CaliburnMicro.Cards.ViewModels;
@@ -31,7 +30,6 @@ using Dapplo.CaliburnMicro.Toasts;
 using Dapplo.Utils;
 using Dapplo.Windows.Clipboard;
 using Microsoft.AspNet.SignalR;
-using Newtonsoft.Json;
 using Wapplo.WindowsServices.Configuration;
 
 namespace Wapplo.WindowsServices.Hub
@@ -50,14 +48,14 @@ namespace Wapplo.WindowsServices.Hub
         private ToastConductor ToastConductor { get; set; }
 
         [Import]
-        private ISubject<ClipboardContents> ClipboardUpdates { get; set; }
+        private ISubject<ClipboardUpdateInformation> ClipboardUpdates { get; set; }
 
         /// <inheritdoc />
-        public void CopyToClipboard(string origin, string text, string format = "CF_UNICODETEXT")
+        public void CopyToClipboard(string origin, string text)
         {
             using (ClipboardNative.Lock())
             {
-                ClipboardNative.SetAsString(text, format);
+                ClipboardNative.SetAsString(text);
             }
         }
 
@@ -91,11 +89,11 @@ namespace Wapplo.WindowsServices.Hub
         }
 
         /// <inheritdoc />
-        public string GetClipboardContent(string format = "CF_UNICODETEXT")
+        public string GetClipboardString()
         {
             using (ClipboardNative.Lock())
             {
-                return ClipboardNative.GetAsString(format);
+                return ClipboardNative.GetAsString();
             }
         }
 

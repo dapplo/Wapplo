@@ -41,7 +41,7 @@ namespace Wapplo.WindowsServices
         private readonly IWindowsServicesConfiguration _windowsServicesConfiguration;
 
         [Export]
-        private ISubject<ClipboardContents> ClipboardUpdates { get; } = new Subject<ClipboardContents>();
+        private ISubject<ClipboardUpdateInformation> ClipboardUpdates { get; } = new Subject<ClipboardUpdateInformation>();
 
         private IDisposable _clipboardMonitor;
         private readonly SynchronizationContext _uiSynchronizationContext;

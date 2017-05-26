@@ -52,10 +52,9 @@ namespace Wapplo
                 ShutdownMode = ShutdownMode.OnExplicitShutdown
             };
 
-            dapplication.Bootstrapper.AddScanDirectory(@"modules");
+            dapplication.Bootstrapper.FindAndLoadAssemblies("Dapplo.Owin*");
+            dapplication.Bootstrapper.FindAndLoadAssemblies("Dapplo.CaliburnMicro.*");
 
-            // Add some DLL's we need
-            dapplication.Bootstrapper.FindAndLoadAssemblies("Dapplo*");
             // Add the directory where scanning takes place
 #if DEBUG
             dapplication.Bootstrapper.AddScanDirectory(@"..\..\..\Wapplo.ShareContext\bin\Debug");

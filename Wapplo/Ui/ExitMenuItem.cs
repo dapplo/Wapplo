@@ -37,7 +37,7 @@ namespace Wapplo.Ui
 	///     This will add an extry for the exit to the context menu
 	/// </summary>
 	[Export("contextmenu", typeof(IMenuItem))]
-	public sealed class ExitMenuItem : MenuItem
+	public sealed class ExitMenuItem : ClickableMenuItem
 	{
 		[Import]
 		private IContextMenuTranslations ContextMenuTranslations { get; set; }

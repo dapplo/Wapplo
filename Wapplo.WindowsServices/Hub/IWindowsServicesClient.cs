@@ -31,7 +31,7 @@ namespace Wapplo.WindowsServices.Hub
         /// <summary>
         /// Call the client when the clipboard content has changed
         /// </summary>
-        /// <param name="contents">ClipboardContents</param>
-        void ClipboardChanged(ClipboardContents contents);
+        /// <param name="updateInformation">ClipboardUpdateInformation</param>
+        void ClipboardChanged(ClipboardUpdateInformation updateInformation);
     }
 }

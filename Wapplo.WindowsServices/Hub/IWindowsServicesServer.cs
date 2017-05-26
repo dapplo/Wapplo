@@ -33,8 +33,7 @@ namespace Wapplo.WindowsServices.Hub
         /// </summary>
         /// <param name="origin">Where does the clipboard content come from</param>
         /// <param name="text">String to place onto the clipboard</param>
-        /// <param name="format">Format to paste with</param>
-        void CopyToClipboard(string origin, string text, string format = "CF_UNICODETEXT");
+        void CopyToClipboard(string origin, string text);
 
         /// <summary>
         /// Enable or disable clipboard monitoring for the client
@@ -43,10 +42,9 @@ namespace Wapplo.WindowsServices.Hub
         void MonitorClipboard(bool enable);
 
         /// <summary>
-        /// Get the clipboard contents for the specified content
+        /// Get the clipboard string contents
         /// </summary>
-        /// <param name="format">Clipboard format for the content to retrieve</param>
-        string GetClipboardContent(string format = "CF_UNICODETEXT");
+        string GetClipboardString();
 
 
         /// <summary>
