@@ -22,7 +22,6 @@
 #region using
 
 using System;
-using System.Threading;
 using System.Windows;
 using Dapplo.CaliburnMicro.Dapp;
 using Dapplo.Log;
@@ -52,9 +51,9 @@ namespace Wapplo
                 ShutdownMode = ShutdownMode.OnExplicitShutdown
             };
 
-            dapplication.Bootstrapper.FindAndLoadAssemblies("Dapplo.Owin*");
             dapplication.Bootstrapper.FindAndLoadAssemblies("Dapplo.CaliburnMicro.*");
-
+            dapplication.Bootstrapper.FindAndLoadAssemblies("Dapplo.Owin*");
+            dapplication.Bootstrapper.FindAndLoadAssemblies("Dapplo.Signalr*");
             // Add the directory where scanning takes place
 #if DEBUG
             dapplication.Bootstrapper.AddScanDirectory(@"..\..\..\Wapplo.ShareContext\bin\Debug");

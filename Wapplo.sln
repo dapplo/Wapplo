@@ -4,6 +4,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wapplo", "Wapplo\Wapplo.csproj", "{F65AE9E4-AE09-4A09-A40E-3590A75F4751}"
+	ProjectSection(ProjectDependencies) = postProject
+		{359911A6-B9C2-4AEE-8EF0-BD50A9E8CDB1} = {359911A6-B9C2-4AEE-8EF0-BD50A9E8CDB1}
+		{A03C8AD6-8B6B-4542-A357-051C6EC83BDA} = {A03C8AD6-8B6B-4542-A357-051C6EC83BDA}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wapplo.ShareContext", "Wapplo.ShareContext\Wapplo.ShareContext.csproj", "{A03C8AD6-8B6B-4542-A357-051C6EC83BDA}"
 EndProject
