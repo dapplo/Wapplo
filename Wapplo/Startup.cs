@@ -52,8 +52,8 @@ namespace Wapplo
             };
 
             dapplication.Bootstrapper.FindAndLoadAssemblies("Dapplo.CaliburnMicro.*");
-            dapplication.Bootstrapper.FindAndLoadAssemblies("Dapplo.Owin*");
-            dapplication.Bootstrapper.FindAndLoadAssemblies("Dapplo.Signalr*");
+            dapplication.Bootstrapper.FindAndLoadAssemblies("Dapplo.Owin");
+            dapplication.Bootstrapper.FindAndLoadAssemblies("Dapplo.Signalr");
             // Add the directory where scanning takes place
 #if DEBUG
             dapplication.Bootstrapper.AddScanDirectory(@"..\..\..\Wapplo.ShareContext\bin\Debug");
