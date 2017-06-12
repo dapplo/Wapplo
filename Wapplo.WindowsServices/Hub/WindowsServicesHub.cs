@@ -55,7 +55,7 @@ namespace Wapplo.WindowsServices.Hub
         {
             using (ClipboardNative.Lock())
             {
-                ClipboardNative.SetAsString(text);
+                ClipboardNative.SetAsUnicodeString(text);
             }
         }
 
@@ -93,7 +93,7 @@ namespace Wapplo.WindowsServices.Hub
         {
             using (ClipboardNative.Lock())
             {
-                return ClipboardNative.GetAsString();
+                return ClipboardNative.GetAsUnicodeString();
             }
         }
 
