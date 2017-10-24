@@ -62,7 +62,10 @@
 		shareContextHub.client.contextShared = function (sharedContext) {
 			$("#output").append(" " + sharedContext.values.time + "<strong>" + sharedContext.origin + "</strong>:");
 			for(var index in sharedContext.values) {
-				if(index === "time") {
+				if (!sharedContext.values.hasOwnProperty(index)) {
+					continue;
+				}
+				if (index === "time") {
 					continue;
 				}
 				$("#output").append(index + "=" + sharedContext.values[index]);

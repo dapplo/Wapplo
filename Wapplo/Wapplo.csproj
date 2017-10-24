@@ -43,91 +43,74 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AdaptiveCards, Version=0.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AdaptiveCards.0.5.0\lib\net452\AdaptiveCards.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="AdaptiveCards, Version=0.5.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AdaptiveCards.0.5.1\lib\net452\AdaptiveCards.dll</HintPath>
     </Reference>
-    <Reference Include="Caliburn.Micro, Version=3.0.3.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
-      <HintPath>..\packages\Caliburn.Micro.Core.3.1.0\lib\net45\Caliburn.Micro.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Caliburn.Micro, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.Core.3.2.0\lib\net45\Caliburn.Micro.dll</HintPath>
     </Reference>
-    <Reference Include="Caliburn.Micro.Platform, Version=3.0.3.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
-      <HintPath>..\packages\Caliburn.Micro.3.1.0\lib\net45\Caliburn.Micro.Platform.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Caliburn.Micro.Platform, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.3.2.0\lib\net45\Caliburn.Micro.Platform.dll</HintPath>
     </Reference>
-    <Reference Include="Caliburn.Micro.Platform.Core, Version=3.0.3.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
-      <HintPath>..\packages\Caliburn.Micro.3.1.0\lib\net45\Caliburn.Micro.Platform.Core.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Caliburn.Micro.Platform.Core, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.3.2.0\lib\net45\Caliburn.Micro.Platform.Core.dll</HintPath>
     </Reference>
     <Reference Include="CommandLine, Version=2.0.275.0, Culture=neutral, PublicKeyToken=de6f01bd326f8c32, processorArchitecture=MSIL">
       <HintPath>..\packages\CommandLineParser.2.1.1-beta\lib\net45\CommandLine.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="CommonServiceLocator, Version=2.0.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.2.0.1\lib\net45\CommonServiceLocator.dll</HintPath>
+    </Reference>
     <Reference Include="Costura, Version=1.6.2.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
       <HintPath>..\packages\Costura.Fody.1.6.2\lib\dotnet\Costura.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Dapplo.Addons, Version=0.5.22.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.Addons.0.5.22\lib\net45\Dapplo.Addons.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Dapplo.Addons, Version=0.5.41.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.Addons.0.5.41\lib\net45\Dapplo.Addons.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.Addons.Bootstrapper, Version=0.5.22.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.Addons.Bootstrapper.0.5.22\lib\net45\Dapplo.Addons.Bootstrapper.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Dapplo.Addons.Bootstrapper, Version=0.5.41.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.Addons.Bootstrapper.0.5.41\lib\net45\Dapplo.Addons.Bootstrapper.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.CaliburnMicro, Version=0.4.41.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.CaliburnMicro.0.4.41\lib\net45\Dapplo.CaliburnMicro.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Dapplo.CaliburnMicro, Version=0.5.18.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.CaliburnMicro.0.5.18\lib\net45\Dapplo.CaliburnMicro.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.CaliburnMicro.Cards, Version=0.4.41.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.CaliburnMicro.Cards.0.4.41\lib\net46\Dapplo.CaliburnMicro.Cards.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Dapplo.CaliburnMicro.Cards, Version=0.5.18.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.CaliburnMicro.Cards.0.5.18\lib\net46\Dapplo.CaliburnMicro.Cards.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.CaliburnMicro.Configuration, Version=0.4.41.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.CaliburnMicro.Configuration.0.4.41\lib\net45\Dapplo.CaliburnMicro.Configuration.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Dapplo.CaliburnMicro.Configuration, Version=0.5.18.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.CaliburnMicro.Configuration.0.5.18\lib\net45\Dapplo.CaliburnMicro.Configuration.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.CaliburnMicro.Dapp, Version=0.4.41.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.CaliburnMicro.Dapp.0.4.41\lib\net45\Dapplo.CaliburnMicro.Dapp.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Dapplo.CaliburnMicro.Dapp, Version=0.5.18.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.CaliburnMicro.Dapp.0.5.18\lib\net45\Dapplo.CaliburnMicro.Dapp.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.CaliburnMicro.Menu, Version=0.4.41.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.CaliburnMicro.Menu.0.4.41\lib\net45\Dapplo.CaliburnMicro.Menu.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Dapplo.CaliburnMicro.Menu, Version=0.5.18.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.CaliburnMicro.Menu.0.5.18\lib\net45\Dapplo.CaliburnMicro.Menu.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.CaliburnMicro.Metro, Version=0.4.41.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.CaliburnMicro.Metro.0.4.41\lib\net45\Dapplo.CaliburnMicro.Metro.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Dapplo.CaliburnMicro.Metro, Version=0.5.18.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.CaliburnMicro.Metro.0.5.18\lib\net45\Dapplo.CaliburnMicro.Metro.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.CaliburnMicro.NotifyIconWpf, Version=0.4.41.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.CaliburnMicro.NotifyIconWpf.0.4.41\lib\net45\Dapplo.CaliburnMicro.NotifyIconWpf.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Dapplo.CaliburnMicro.NotifyIconWpf, Version=0.5.18.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.CaliburnMicro.NotifyIconWpf.0.5.18\lib\net45\Dapplo.CaliburnMicro.NotifyIconWpf.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.CaliburnMicro.Security, Version=0.4.41.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.CaliburnMicro.Security.0.4.41\lib\net45\Dapplo.CaliburnMicro.Security.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Dapplo.CaliburnMicro.Security, Version=0.5.18.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.CaliburnMicro.Security.0.5.18\lib\net45\Dapplo.CaliburnMicro.Security.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.CaliburnMicro.Toasts, Version=0.4.41.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.CaliburnMicro.Toasts.0.4.41\lib\net452\Dapplo.CaliburnMicro.Toasts.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Dapplo.CaliburnMicro.Toasts, Version=0.5.18.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.CaliburnMicro.Toasts.0.5.18\lib\net452\Dapplo.CaliburnMicro.Toasts.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.CaliburnMicro.Translations, Version=0.4.41.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.CaliburnMicro.Translations.0.4.41\lib\net45\Dapplo.CaliburnMicro.Translations.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Dapplo.CaliburnMicro.Translations, Version=0.5.18.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.CaliburnMicro.Translations.0.5.18\lib\net45\Dapplo.CaliburnMicro.Translations.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.HttpExtensions, Version=0.6.22.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.HttpExtensions.0.6.22\lib\net46\Dapplo.HttpExtensions.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-      <Private>True</Private>
+    <Reference Include="Dapplo.HttpExtensions, Version=0.8.23.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.HttpExtensions.0.8.23\lib\net46\Dapplo.HttpExtensions.dll</HintPath>
     </Reference>
     <Reference Include="Dapplo.Ini, Version=0.5.19.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapplo.Ini.0.5.19\lib\net45\Dapplo.Ini.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Dapplo.InterfaceImpl, Version=0.2.9.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.InterfaceImpl.0.2.9\lib\net45\Dapplo.InterfaceImpl.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-      <Private>True</Private>
+    <Reference Include="Dapplo.InterfaceImpl, Version=0.2.11.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.InterfaceImpl.0.2.11\lib\net45\Dapplo.InterfaceImpl.dll</HintPath>
     </Reference>
     <Reference Include="Dapplo.Language, Version=0.5.19.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapplo.Language.0.5.19\lib\net45\Dapplo.Language.dll</HintPath>
@@ -143,59 +126,48 @@
       <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Dapplo.Owin, Version=0.1.57.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.Owin.0.1.57\lib\net45\Dapplo.Owin.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Dapplo.Owin, Version=0.1.70.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.Owin.0.1.70\lib\net45\Dapplo.Owin.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.SignalR, Version=0.1.57.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.SignalR.0.1.57\lib\net45\Dapplo.SignalR.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Dapplo.SignalR, Version=0.1.70.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.SignalR.0.1.70\lib\net45\Dapplo.SignalR.dll</HintPath>
     </Reference>
     <Reference Include="Dapplo.Utils, Version=1.0.150.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapplo.Utils.1.0.150\lib\net45\Dapplo.Utils.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Dapplo.Windows, Version=0.4.62.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.Windows.0.4.62\lib\net45\Dapplo.Windows.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Dapplo.Windows, Version=0.5.30.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.Windows.0.5.30\lib\net45\Dapplo.Windows.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.Windows.Common, Version=0.4.62.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.Windows.Common.0.4.62\lib\net45\Dapplo.Windows.Common.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Dapplo.Windows.Common, Version=0.5.30.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.Windows.Common.0.5.30\lib\net45\Dapplo.Windows.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.Windows.DesktopWindowsManager, Version=0.4.62.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.Windows.DesktopWindowsManager.0.4.62\lib\net45\Dapplo.Windows.DesktopWindowsManager.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Dapplo.Windows.DesktopWindowsManager, Version=0.5.30.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.Windows.DesktopWindowsManager.0.5.30\lib\net45\Dapplo.Windows.DesktopWindowsManager.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.Windows.Dpi, Version=0.4.62.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.Windows.Dpi.0.4.62\lib\net45\Dapplo.Windows.Dpi.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Dapplo.Windows.Dpi, Version=0.5.30.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.Windows.Dpi.0.5.30\lib\net45\Dapplo.Windows.Dpi.dll</HintPath>
     </Reference>
     <Reference Include="Dapplo.Windows.Gdi, Version=0.4.20.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapplo.Windows.Gdi.0.4.20\lib\net45\Dapplo.Windows.Gdi.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Dapplo.Windows.Gdi32, Version=0.4.62.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.Windows.Gdi32.0.4.62\lib\net45\Dapplo.Windows.Gdi32.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Dapplo.Windows.Gdi32, Version=0.5.30.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.Windows.Gdi32.0.5.30\lib\net45\Dapplo.Windows.Gdi32.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.Windows.Input, Version=0.4.62.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.Windows.Input.0.4.62\lib\net45\Dapplo.Windows.Input.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Dapplo.Windows.Input, Version=0.5.30.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.Windows.Input.0.5.30\lib\net45\Dapplo.Windows.Input.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.Windows.Messages, Version=0.4.62.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.Windows.Messages.0.4.62\lib\net45\Dapplo.Windows.Messages.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Dapplo.Windows.Messages, Version=0.5.30.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.Windows.Messages.0.5.30\lib\net45\Dapplo.Windows.Messages.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.Windows.Shell32, Version=0.4.62.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.Windows.Shell32.0.4.62\lib\net45\Dapplo.Windows.Shell32.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Dapplo.Windows.Shell32, Version=0.5.30.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.Windows.Shell32.0.5.30\lib\net45\Dapplo.Windows.Shell32.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.Windows.User32, Version=0.4.62.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.Windows.User32.0.4.62\lib\net45\Dapplo.Windows.User32.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Dapplo.Windows.User32, Version=0.5.30.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.Windows.User32.0.5.30\lib\net45\Dapplo.Windows.User32.dll</HintPath>
     </Reference>
     <Reference Include="Hardcodet.Wpf.TaskbarNotification, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Hardcodet.NotifyIcon.Wpf.1.0.8\lib\net451\Hardcodet.Wpf.TaskbarNotification.dll</HintPath>
@@ -209,9 +181,8 @@
       <HintPath>..\packages\MahApps.Metro.1.5.0\lib\net45\MahApps.Metro.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MahApps.Metro.IconPacks, Version=1.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MahApps.Metro.IconPacks.1.9.0\lib\net46\MahApps.Metro.IconPacks.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="MahApps.Metro.IconPacks, Version=1.9.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.IconPacks.1.9.1\lib\net46\MahApps.Metro.IconPacks.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AdaptiveCards.Xaml.Wpf, Version=0.5.6339.19873, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AdaptiveCards.Xaml.Wpf.0.5.6339.19873\lib\net46\Microsoft.AdaptiveCards.Xaml.Wpf.dll</HintPath>
@@ -221,9 +192,8 @@
       <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.2\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.MarkedNet, Version=1.0.11.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.MarkedNet.1.0.11\lib\net452\Microsoft.MarkedNet.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Microsoft.MarkedNet, Version=1.0.12.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.MarkedNet.1.0.12\lib\net452\Microsoft.MarkedNet.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Owin, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
@@ -255,10 +225,6 @@
     </Reference>
     <Reference Include="Microsoft.Owin.StaticFiles, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.StaticFiles.3.1.0\lib\net45\Microsoft.Owin.StaticFiles.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
@@ -305,7 +271,7 @@
     </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Caliburn.Micro.3.1.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <HintPath>..\packages\Caliburn.Micro.3.2.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Xml" />
@@ -317,9 +283,8 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
-    <Reference Include="ToastNotifications, Version=2.1.3.0, Culture=neutral, PublicKeyToken=e89d9d7314a7c797, processorArchitecture=MSIL">
-      <HintPath>..\packages\ToastNotifications.2.1.3\lib\net452\ToastNotifications.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="ToastNotifications, Version=2.2.5.0, Culture=neutral, PublicKeyToken=e89d9d7314a7c797, processorArchitecture=MSIL">
+      <HintPath>..\packages\ToastNotifications.2.2.5\lib\net40\ToastNotifications.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
@@ -379,12 +344,12 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
-    <Error Condition="!Exists('..\packages\Fody.2.1.0\build\netstandard1.0\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.2.1.0\build\netstandard1.0\Fody.targets'))" />
     <Error Condition="!Exists('..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets'))" />
+    <Error Condition="!Exists('..\packages\Fody.2.2.0\build\net452\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.2.2.0\build\net452\Fody.targets'))" />
   </Target>
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
-  <Import Project="..\packages\Fody.2.1.0\build\netstandard1.0\Fody.targets" Condition="Exists('..\packages\Fody.2.1.0\build\netstandard1.0\Fody.targets')" />
   <Import Project="..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets" Condition="Exists('..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets')" />
+  <Import Project="..\packages\Fody.2.2.0\build\net452\Fody.targets" Condition="Exists('..\packages\Fody.2.2.0\build\net452\Fody.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
