@@ -26,6 +26,7 @@ using System.ComponentModel.Composition;
 using System.Reactive.Linq;
 using System.Reactive.Subjects;
 using System.Threading;
+using Dapplo.CaliburnMicro;
 using Dapplo.Log;
 using Dapplo.Windows.Clipboard;
 
@@ -34,7 +35,7 @@ namespace Wapplo.WindowsServices
     /// <summary>
     /// Make it possible to subscribe to events
     /// </summary>
-    [StartupAction, ShutdownAction]
+    [StartupAction(StartupOrder = (int)CaliburnStartOrder.User), ShutdownAction]
     public class WindowsServicesStartup : IStartupAction, IShutdownAction
     {
         private static readonly LogSource Log = new LogSource();
