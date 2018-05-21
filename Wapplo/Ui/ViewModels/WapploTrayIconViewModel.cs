@@ -23,10 +23,10 @@
 
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.Composition;
 using System.Linq;
 using System.Windows;
 using System.Windows.Media;
+using Autofac.Features.AttributeFilters;
 using Caliburn.Micro;
 using Dapplo.CaliburnMicro.Extensions;
 using Dapplo.CaliburnMicro.Menu;
@@ -42,17 +42,25 @@ namespace Wapplo.Ui.ViewModels
 	/// <summary>
 	///     Implementation of the system-tray icon
 	/// </summary>
-	[Export(typeof(ITrayIconViewModel))]
 	public class WapploTrayIconViewModel : TrayIconViewModel
 	{
-		[ImportMany("contextmenu", typeof(IMenuItem))]
-		private IEnumerable<Lazy<IMenuItem>> ContextMenuItems { get; set; }
+	    private readonly IContextMenuTranslations _contextMenuTranslations;
+	    private readonly IEnumerable<Lazy<IMenuItem>> _contextMenuItems;
 
-		[Import]
-		private IContextMenuTranslations ContextMenuTranslations { get; set; }
+	    private readonly IEventAggregator _eventAggregator;
 
-		[Import]
-		private IEventAggregator EventAggregator { get; set; }
+	    /// <inheritdoc />
+	    public WapploTrayIconViewModel(
+	        IEventAggregator eventAggregatore,
+            IContextMenuTranslations contextMenuTranslations,
+            ITrayIconManager trayIconManager,
+	        [MetadataFilter("Menu", "contextmenu")]IEnumerable<Lazy<IMenuItem>> contextMenuItems = null
+        ) : base(trayIconManager)
+	    {
+	        _eventAggregator = eventAggregatore;
+            _contextMenuTranslations = contextMenuTranslations ?? throw new ArgumentNullException(nameof(contextMenuTranslations));
+            _contextMenuItems = contextMenuItems;
+        }
 
 		/// <inheritdoc />
 		protected override void OnActivate()
@@ -60,12 +68,12 @@ namespace Wapplo.Ui.ViewModels
 			base.OnActivate();
 
 			// Set the title of the icon (the ToolTipText) to our IContextMenuTranslations.Title
-			ContextMenuTranslations.CreateDisplayNameBinding(this, nameof(IContextMenuTranslations.Title));
+			_contextMenuTranslations.CreateDisplayNameBinding(this, nameof(IContextMenuTranslations.Title));
 
 			var items = new List<IMenuItem>();
 
 			// Lazy values
-			items.AddRange(ContextMenuItems.Select(lazy => lazy.Value));
+			items.AddRange(_contextMenuItems.Select(lazy => lazy.Value));
 
 			items.Add(new MenuItem
 			{
@@ -84,7 +92,7 @@ namespace Wapplo.Ui.ViewModels
 				Foreground = Brushes.Black
 			});
 			Show();
-			EventAggregator.Subscribe(this);
+		    _eventAggregator.Subscribe(this);
 		}
 	}
 }

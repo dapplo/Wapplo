@@ -1,5 +1,26 @@
-﻿using System.ComponentModel.Composition;
+﻿//  Dapplo - building blocks for desktop applications
+//  Copyright (C) 2016-2017 Dapplo
+// 
+//  For more information see: http://dapplo.net/
+//  Dapplo repositories are hosted on GitHub: https://github.com/dapplo
+// 
+//  This file is part of Wapplo
+// 
+//  Wapplo is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU Lesser General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+// 
+//  Wapplo is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU Lesser General Public License for more details.
+// 
+//  You should have a copy of the GNU Lesser General Public License
+//  along with Wapplo. If not, see <http://www.gnu.org/licenses/lgpl.txt>.
+
 using System.Reflection;
+using Dapplo.Addons;
 using Dapplo.Log;
 using Dapplo.Owin;
 using Microsoft.Owin;
@@ -13,7 +34,7 @@ namespace Wapplo.Modules
 	/// <summary>
 	///     An abstract Owin Module which makes it easier to configure a file server
 	/// </summary>
-	[OwinModule]
+	[ServiceOrder(OwinModuleStartupOrders.User)]
 	public class ConfigureOwinFileServer : BaseOwinModule
 	{
 		private static readonly LogSource Log = new LogSource();
@@ -21,8 +42,17 @@ namespace Wapplo.Modules
 		/// <summary>
 		/// IOwinFileServerConfiguration
 		/// </summary>
-		[Import]
-		protected IWebserverConfiguration WebserverConfiguration { get; set; }
+		protected IWebserverConfiguration WebserverConfiguration { get; }
+
+        /// <summary>
+        /// Constructor which accepts all dependencies
+        /// </summary>
+        /// <param name="webserverConfiguration"></param>
+	    public ConfigureOwinFileServer(
+	        IWebserverConfiguration webserverConfiguration)
+	    {
+	        WebserverConfiguration = webserverConfiguration;
+	    }
 
 		/// <summary>
 		///     Configure FileServer for Owin

@@ -36,12 +36,21 @@ namespace Wapplo.Ui
 	/// <summary>
 	///     This will add an extry for the exit to the context menu
 	/// </summary>
-	[Export("contextmenu", typeof(IMenuItem))]
+	[Menu("contextmenu")]
 	public sealed class ExitMenuItem : ClickableMenuItem
 	{
-		[Import]
-		private IContextMenuTranslations ContextMenuTranslations { get; set; }
+	    private readonly IContextMenuTranslations _contextMenuTranslations;
 
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        /// <param name="contextMenuTranslations">IContextMenuTranslations</param>
+        public ExitMenuItem(
+	        IContextMenuTranslations contextMenuTranslations
+	    )
+	    {
+	        _contextMenuTranslations = contextMenuTranslations;
+	    }
 		/// <summary>
 		/// Handle the click on the exit item of the context menu
 		/// </summary>
@@ -58,7 +67,7 @@ namespace Wapplo.Ui
 		{
 			Id = "Z_Exit";
 			// automatically update the DisplayName
-			ContextMenuTranslations.CreateDisplayNameBinding(this, nameof(IContextMenuTranslations.Exit));
+			_contextMenuTranslations.CreateDisplayNameBinding(this, nameof(IContextMenuTranslations.Exit));
 
 			Icon = new PackIconMaterial
 			{

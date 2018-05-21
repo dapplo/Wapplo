@@ -22,8 +22,6 @@
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.ComponentModel.Composition;
-using System.Reactive.Subjects;
 using AdaptiveCards;
 using Dapplo.CaliburnMicro.Cards.ViewModels;
 using Dapplo.CaliburnMicro.Toasts;
@@ -41,14 +39,26 @@ namespace Wapplo.WindowsServices.Hub
     {
         private static readonly IDictionary<string, IDisposable> ClipboardSubscriptions = new ConcurrentDictionary<string, IDisposable>();
 
-        [Import]
-        private IWindowsServicesConfiguration WindowsServicesConfiguration { get; set; }
+        private readonly IWindowsServicesConfiguration _windowsServicesConfiguration;
+        private readonly ToastConductor _toastConductor;
+        private readonly ClipboardSubjectHolder _clipboardUpdates;
 
-        [Import]
-        private ToastConductor ToastConductor { get; set; }
-
-        [Import]
-        private ISubject<ClipboardUpdateInformation> ClipboardUpdates { get; set; }
+        /// <summary>
+        /// Constructor for the Hub
+        /// </summary>
+        /// <param name="windowsServicesConfiguration">IWindowsServicesConfiguration</param>
+        /// <param name="toastConductor">ToastConductor</param>
+        /// <param name="clipboardUpdates">ISubject of ClipboardUpdateInformation</param>
+        public WindowsServicesHub(
+            IWindowsServicesConfiguration windowsServicesConfiguration,
+            ToastConductor toastConductor,
+            ClipboardSubjectHolder clipboardUpdates
+            )
+        {
+            _windowsServicesConfiguration = windowsServicesConfiguration;
+            _toastConductor = toastConductor;
+            _clipboardUpdates = clipboardUpdates;
+        }
 
         /// <inheritdoc />
         public void CopyToClipboard(string origin, string text)
@@ -62,7 +72,7 @@ namespace Wapplo.WindowsServices.Hub
         /// <inheritdoc />
         public void MonitorClipboard(bool enable)
         {
-            if (!WindowsServicesConfiguration.AllowClipboardMonitoring)
+            if (!_windowsServicesConfiguration.AllowClipboardMonitoring)
             {
                 throw new NotSupportedException();
             }
@@ -75,7 +85,7 @@ namespace Wapplo.WindowsServices.Hub
                     return;
                 }
                 // Create a subscription, which will inform of clipboard updates
-                var subscription = ClipboardUpdates.Subscribe(contents =>
+                var subscription = _clipboardUpdates.ClipboardUpdates.Subscribe(contents =>
                 {
                     Clients.Client(Context.ConnectionId).ClipboardChanged(contents);
                 });
@@ -100,7 +110,7 @@ namespace Wapplo.WindowsServices.Hub
         /// <inheritdoc />
         public void ShowAdaptiveCard(AdaptiveCard adaptiveCard)
         {
-            UiContext.RunOn(() => ToastConductor.ActivateItem(new AdaptiveCardViewModel(adaptiveCard)));
+            UiContext.RunOn(() => _toastConductor.ActivateItem(new AdaptiveCardViewModel(adaptiveCard)));
         }
     }
 }

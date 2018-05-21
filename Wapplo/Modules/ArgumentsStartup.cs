@@ -22,7 +22,6 @@
 #region using
 
 using System;
-using System.ComponentModel.Composition;
 using System.Windows;
 using Dapplo.Addons;
 using Wapplo.Configuration;
@@ -35,11 +34,21 @@ namespace Wapplo.Modules
 	/// <summary>
 	///     Process commandline arguments
 	/// </summary>
-	[StartupAction(AwaitStart = true, StartupOrder = int.MinValue + 200)]
-	public class ArgumentsStartup : IStartupAction
+	[ServiceOrder(int.MinValue)]
+	public class ArgumentsStartup : IStartup
 	{
-		[Import]
-		private IWebserverConfiguration WebserverConfiguration { get; set; }
+	    private readonly IWebserverConfiguration _webserverConfiguration;
+
+        /// <summary>
+        /// Constructor for all dependencies
+        /// </summary>
+        /// <param name="webserverConfiguration">IWebserverConfiguration</param>
+        public ArgumentsStartup(
+            IWebserverConfiguration webserverConfiguration
+            )
+	    {
+	        _webserverConfiguration = webserverConfiguration;
+	    }
 
 		/// <summary>
 		///     Perform a start of whatever needs to be started.
@@ -55,9 +64,9 @@ namespace Wapplo.Modules
 				Application.Current.Shutdown();
 				return;
 			}
-			// Store the result back to the IOwinConfiguration
-			WebserverConfiguration.Hostname = commandlineOptions.Hostname;
-			WebserverConfiguration.Port = commandlineOptions.Port;
+            // Store the result back to the IOwinConfiguration
+		    _webserverConfiguration.Hostname = commandlineOptions.Hostname;
+		    _webserverConfiguration.Port = commandlineOptions.Port;
 		}
 	}
 }

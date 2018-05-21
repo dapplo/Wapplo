@@ -22,10 +22,9 @@
 using System;
 using Dapplo.Addons;
 using Wapplo.WindowsServices.Configuration;
-using System.ComponentModel.Composition;
 using System.Reactive.Linq;
-using System.Reactive.Subjects;
 using System.Threading;
+using Autofac.Features.AttributeFilters;
 using Dapplo.CaliburnMicro;
 using Dapplo.Log;
 using Dapplo.Windows.Clipboard;
@@ -35,28 +34,27 @@ namespace Wapplo.WindowsServices
     /// <summary>
     /// Make it possible to subscribe to events
     /// </summary>
-    [StartupAction(StartupOrder = (int)CaliburnStartOrder.User), ShutdownAction]
-    public class WindowsServicesStartup : IStartupAction, IShutdownAction
+    [ServiceOrder(CaliburnStartOrder.User)]
+    public class WindowsServicesStartup : IStartup, IShutdown
     {
         private static readonly LogSource Log = new LogSource();
+        private readonly ClipboardSubjectHolder _clipboardSubjectHolder;
         private readonly IWindowsServicesConfiguration _windowsServicesConfiguration;
-
-        [Export]
-        private ISubject<ClipboardUpdateInformation> ClipboardUpdates { get; } = new Subject<ClipboardUpdateInformation>();
-
         private IDisposable _clipboardMonitor;
         private readonly SynchronizationContext _uiSynchronizationContext;
 
         /// <summary>
         /// Importing constructor
         /// </summary>
+        /// <param name="clipboardSubjectHolder">ClipboardSubjectHolder</param>
         /// <param name="windowsServicesConfiguration">IWindowsServicesConfiguration</param>
         /// <param name="uiSynchronizationContext">SynchronizationContext</param>
-        [ImportingConstructor]
         public WindowsServicesStartup(
+            ClipboardSubjectHolder clipboardSubjectHolder,
             IWindowsServicesConfiguration windowsServicesConfiguration,
-            [Import("ui", typeof(SynchronizationContext))]SynchronizationContext uiSynchronizationContext)
+            [KeyFilter("ui")]SynchronizationContext uiSynchronizationContext)
         {
+            _clipboardSubjectHolder = clipboardSubjectHolder;
             _windowsServicesConfiguration = windowsServicesConfiguration;
             _uiSynchronizationContext = uiSynchronizationContext;
         }
@@ -71,7 +69,7 @@ namespace Wapplo.WindowsServices
             }
             _clipboardMonitor = ClipboardMonitor.OnUpdate.SubscribeOn(_uiSynchronizationContext).Subscribe(clipboardContents =>
             {
-                ClipboardUpdates.OnNext(clipboardContents);
+                _clipboardSubjectHolder.ClipboardUpdates.OnNext(clipboardContents);
             });
             Log.Info().WriteLine("Registered to clipboard updates.");
         }

@@ -51,19 +51,22 @@ namespace Wapplo
                 ShutdownMode = ShutdownMode.OnExplicitShutdown
             };
 
-            dapplication.Bootstrapper.FindAndLoadAssemblies("Dapplo.CaliburnMicro.*");
-            dapplication.Bootstrapper.FindAndLoadAssemblies("Dapplo.Owin");
-            dapplication.Bootstrapper.FindAndLoadAssemblies("Dapplo.Signalr");
-            // Add the directory where scanning takes place
+            dapplication.Bootstrapper
+                .FindAndLoadAssemblies("Dapplo.Addons.Config")
+                .FindAndLoadAssemblies("Dapplo.CaliburnMicro.*")
+                .FindAndLoadAssemblies("Dapplo.Owin")
+                .FindAndLoadAssemblies("Dapplo.Signalr")
+                // Add the directory where scanning takes place
 #if DEBUG
-            dapplication.Bootstrapper.AddScanDirectory(@"..\..\..\Wapplo.ShareContext\bin\Debug");
-            dapplication.Bootstrapper.AddScanDirectory(@"..\..\..\Wapplo.WindowsServices\bin\Debug");
+                .AddScanDirectory(@"..\..\..\Wapplo.ShareContext\bin\Debug")
+                .AddScanDirectory(@"..\..\..\Wapplo.WindowsServices\bin\Debug")
 #else
-            dapplication.Bootstrapper.AddScanDirectory(@"..\..\..\Wapplo.ShareContext\bin\Release");
-            dapplication.Bootstrapper.AddScanDirectory(@"..\..\..\Wapplo.WindowsServices\bin\DebugRelease");
+                .AddScanDirectory(@"..\..\..\Wapplo.ShareContext\bin\Release")
+                .AddScanDirectory(@"..\..\..\Wapplo.WindowsServices\bin\DebugRelease")
 #endif
-            // Add the Wapplo modules
-            dapplication.Bootstrapper.FindAndLoadAssemblies("Wapplo.*");
+                // Add the Wapplo modules
+                .FindAndLoadAssemblies("Wapplo.*");
+
             dapplication.Run();
         }
     }

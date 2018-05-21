@@ -21,7 +21,6 @@
 
 #region using
 
-using System.ComponentModel.Composition;
 using System.Windows.Media;
 using Dapplo.CaliburnMicro.Extensions;
 using Dapplo.CaliburnMicro.Menu;
@@ -35,11 +34,17 @@ namespace Wapplo.Ui
 	/// <summary>
 	///     This will add an extry for the exit to the context menu
 	/// </summary>
-	[Export("contextmenu", typeof(IMenuItem))]
+	[Menu("contextmenu")]
 	public sealed class TitleMenuItem : MenuItem
 	{
-		[Import]
-		private IContextMenuTranslations ContextMenuTranslations { get; set; }
+	    private readonly IContextMenuTranslations _contextMenuTranslations;
+
+	    /// <inheritdoc />
+	    public TitleMenuItem(
+	        IContextMenuTranslations contextMenuTranslations)
+	    {
+	        _contextMenuTranslations = contextMenuTranslations;
+	    }
 
 		/// <summary>
 		/// Create the title of the context menu
@@ -47,8 +52,8 @@ namespace Wapplo.Ui
 		public override void Initialize()
 		{
 			Id = "A_Title";
-			// automatically update the DisplayName
-			ContextMenuTranslations.CreateDisplayNameBinding(this, nameof(IContextMenuTranslations.Title));
+            // automatically update the DisplayName
+		    _contextMenuTranslations.CreateDisplayNameBinding(this, nameof(IContextMenuTranslations.Title));
 			Style = MenuItemStyles.Title;
 
 			Icon = new PackIconMaterial
