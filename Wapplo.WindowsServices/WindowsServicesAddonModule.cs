@@ -1,6 +1,6 @@
 ﻿using Autofac;
+using Autofac.Features.AttributeFilters;
 using Dapplo.Addons;
-using Microsoft.AspNet.SignalR.Hubs;
 using Wapplo.WindowsServices.Hub;
 
 namespace Wapplo.WindowsServices
@@ -15,10 +15,20 @@ namespace Wapplo.WindowsServices
         {
             builder
                 .RegisterType<WindowsServicesHub>()
-                .As<IHub>()
                 .AsSelf()
                 .SingleInstance();
-            
+
+            builder
+                .RegisterType<WindowsServicesStartup>()
+                .As<IService>()
+                .WithAttributeFiltering()
+                .SingleInstance();
+
+            builder
+                .RegisterType<ClipboardSubjectHolder>()
+                .AsSelf()
+                .SingleInstance();
+
             base.Load(builder);
         }
     }

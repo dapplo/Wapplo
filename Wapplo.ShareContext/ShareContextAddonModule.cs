@@ -1,6 +1,5 @@
 ﻿using Autofac;
 using Dapplo.Addons;
-using Microsoft.AspNet.SignalR.Hubs;
 using Wapplo.ShareContext.Hub;
 
 namespace Wapplo.ShareContext
@@ -15,7 +14,6 @@ namespace Wapplo.ShareContext
         {
             builder
                 .RegisterType<ShareContextHub>()
-                .As<IHub>()
                 .AsSelf()
                 .SingleInstance();
             

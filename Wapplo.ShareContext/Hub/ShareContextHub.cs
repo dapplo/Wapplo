@@ -21,7 +21,6 @@
 
 #region using
 
-using System.ComponentModel.Composition;
 using Dapplo.Log;
 using Microsoft.AspNet.SignalR;
 using Wapplo.ShareContext.Configuration;
@@ -37,8 +36,16 @@ namespace Wapplo.ShareContext.Hub
 	{
 		private static readonly LogSource Log = new LogSource();
 
-		[Import]
-		private IShareContextConfiguration ShareContextConfiguration { get; set; }
+		private readonly IShareContextConfiguration _shareContextConfiguration;
+
+        /// <summary>
+        /// Constructor with dependencies
+        /// </summary>
+        /// <param name="shareContextConfiguration">IShareContextConfiguration</param>
+        public ShareContextHub(IShareContextConfiguration shareContextConfiguration)
+		{
+			_shareContextConfiguration = shareContextConfiguration;
+		}
 
 		/// <summary>
 		/// This method is offered as a service to the client and will share a context
@@ -46,7 +53,7 @@ namespace Wapplo.ShareContext.Hub
 		/// <param name="sharingContext">SharingContext context to share with others</param>
 		public void ShareContext(SharingContext sharingContext)
 		{
-			if (ShareContextConfiguration.AllowShareContext != true)
+			if (_shareContextConfiguration.AllowShareContext != true)
 			{
 				return;
 			}

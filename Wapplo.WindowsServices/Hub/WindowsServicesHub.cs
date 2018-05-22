@@ -25,6 +25,7 @@ using System.Collections.Generic;
 using AdaptiveCards;
 using Dapplo.CaliburnMicro.Cards.ViewModels;
 using Dapplo.CaliburnMicro.Toasts;
+using Dapplo.Log;
 using Dapplo.Utils;
 using Dapplo.Windows.Clipboard;
 using Microsoft.AspNet.SignalR;
@@ -37,6 +38,7 @@ namespace Wapplo.WindowsServices.Hub
     /// </summary>
     public class WindowsServicesHub : Hub<IWindowsServicesClient>, IWindowsServicesServer
     {
+        private static readonly LogSource Log = new LogSource();
         private static readonly IDictionary<string, IDisposable> ClipboardSubscriptions = new ConcurrentDictionary<string, IDisposable>();
 
         private readonly IWindowsServicesConfiguration _windowsServicesConfiguration;
@@ -77,23 +79,28 @@ namespace Wapplo.WindowsServices.Hub
                 throw new NotSupportedException();
             }
 
+            var connectionId = Context.ConnectionId;
+
             if (enable)
             {
-                if (ClipboardSubscriptions.ContainsKey(Context.ConnectionId))
+                if (ClipboardSubscriptions.ContainsKey(connectionId))
                 {
+                    Log.Verbose().WriteLine("Skipping clipboard subscription for {0}", connectionId);
                     // Do nothing, already subscribed
                     return;
                 }
+                Log.Verbose().WriteLine("Registering clipboard subscription for {0}", connectionId);
                 // Create a subscription, which will inform of clipboard updates
-                var subscription = _clipboardUpdates.ClipboardUpdates.Subscribe(contents =>
+                ClipboardSubscriptions[connectionId] = _clipboardUpdates.ClipboardUpdates.Subscribe(contents =>
                 {
-                    Clients.Client(Context.ConnectionId).ClipboardChanged(contents);
+                    Log.Verbose().WriteLine("Sending clipboard information {0} to {1}", contents.Id, connectionId);
+                    Clients.Client(connectionId).ClipboardChanged(contents);
                 });
-                ClipboardSubscriptions[Context.ConnectionId] = subscription;
             }
-            else if (ClipboardSubscriptions.ContainsKey(Context.ConnectionId))
+            else if (ClipboardSubscriptions.ContainsKey(connectionId))
             {
-                ClipboardSubscriptions[Context.ConnectionId].Dispose();
+                Log.Verbose().WriteLine("Removing clipboard subscription for {0}", connectionId);
+                ClipboardSubscriptions[connectionId].Dispose();
             }
 
         }

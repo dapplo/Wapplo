@@ -144,11 +144,11 @@
     <Reference Include="Dapplo.Log.Loggers, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapplo.Log.Loggers.1.2.1\lib\net45\Dapplo.Log.Loggers.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.Owin, Version=0.2.77.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.Owin.0.2.77-beta\lib\net451\Dapplo.Owin.dll</HintPath>
+    <Reference Include="Dapplo.Owin, Version=0.2.86.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.Owin.0.2.86-beta\lib\net451\Dapplo.Owin.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.SignalR, Version=0.2.77.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.SignalR.0.2.77-beta\lib\net451\Dapplo.SignalR.dll</HintPath>
+    <Reference Include="Dapplo.SignalR, Version=0.2.86.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.SignalR.0.2.86-beta\lib\net451\Dapplo.SignalR.dll</HintPath>
     </Reference>
     <Reference Include="Dapplo.Utils, Version=1.0.158.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapplo.Utils.1.0.158\lib\net45\Dapplo.Utils.dll</HintPath>
