@@ -87,44 +87,44 @@
     <Reference Include="Costura, Version=2.0.1.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
       <HintPath>..\packages\Costura.Fody.2.0.1\lib\net452\Costura.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.Addons, Version=1.0.38.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.Addons.1.0.38-beta\lib\net45\Dapplo.Addons.dll</HintPath>
+    <Reference Include="Dapplo.Addons, Version=1.0.44.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.Addons.1.0.44\lib\net45\Dapplo.Addons.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.Addons.Bootstrapper, Version=1.0.38.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.Addons.Bootstrapper.1.0.38-beta\lib\net45\Dapplo.Addons.Bootstrapper.dll</HintPath>
+    <Reference Include="Dapplo.Addons.Bootstrapper, Version=1.0.44.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.Addons.Bootstrapper.1.0.44\lib\net45\Dapplo.Addons.Bootstrapper.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.Addons.Config, Version=1.0.38.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.Addons.Config.1.0.38-beta\lib\net45\Dapplo.Addons.Config.dll</HintPath>
+    <Reference Include="Dapplo.Addons.Config, Version=1.0.44.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.Addons.Config.1.0.44\lib\net45\Dapplo.Addons.Config.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.CaliburnMicro, Version=1.0.39.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.CaliburnMicro.1.0.39-beta\lib\net45\Dapplo.CaliburnMicro.dll</HintPath>
+    <Reference Include="Dapplo.CaliburnMicro, Version=1.0.42.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.CaliburnMicro.1.0.42\lib\net45\Dapplo.CaliburnMicro.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.CaliburnMicro.Cards, Version=1.0.39.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.CaliburnMicro.Cards.1.0.39-beta\lib\net46\Dapplo.CaliburnMicro.Cards.dll</HintPath>
+    <Reference Include="Dapplo.CaliburnMicro.Cards, Version=1.0.42.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.CaliburnMicro.Cards.1.0.42\lib\net46\Dapplo.CaliburnMicro.Cards.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.CaliburnMicro.Configuration, Version=1.0.39.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.CaliburnMicro.Configuration.1.0.39-beta\lib\net45\Dapplo.CaliburnMicro.Configuration.dll</HintPath>
+    <Reference Include="Dapplo.CaliburnMicro.Configuration, Version=1.0.42.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.CaliburnMicro.Configuration.1.0.42\lib\net45\Dapplo.CaliburnMicro.Configuration.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.CaliburnMicro.Dapp, Version=1.0.39.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.CaliburnMicro.Dapp.1.0.39-beta\lib\net45\Dapplo.CaliburnMicro.Dapp.dll</HintPath>
+    <Reference Include="Dapplo.CaliburnMicro.Dapp, Version=1.0.42.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.CaliburnMicro.Dapp.1.0.42\lib\net45\Dapplo.CaliburnMicro.Dapp.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.CaliburnMicro.Menu, Version=1.0.39.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.CaliburnMicro.Menu.1.0.39-beta\lib\net45\Dapplo.CaliburnMicro.Menu.dll</HintPath>
+    <Reference Include="Dapplo.CaliburnMicro.Menu, Version=1.0.42.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.CaliburnMicro.Menu.1.0.42\lib\net45\Dapplo.CaliburnMicro.Menu.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.CaliburnMicro.Metro, Version=1.0.39.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.CaliburnMicro.Metro.1.0.39-beta\lib\net45\Dapplo.CaliburnMicro.Metro.dll</HintPath>
+    <Reference Include="Dapplo.CaliburnMicro.Metro, Version=1.0.42.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.CaliburnMicro.Metro.1.0.42\lib\net45\Dapplo.CaliburnMicro.Metro.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.CaliburnMicro.NotifyIconWpf, Version=1.0.39.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.CaliburnMicro.NotifyIconWpf.1.0.39-beta\lib\net45\Dapplo.CaliburnMicro.NotifyIconWpf.dll</HintPath>
+    <Reference Include="Dapplo.CaliburnMicro.NotifyIconWpf, Version=1.0.42.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.CaliburnMicro.NotifyIconWpf.1.0.42\lib\net45\Dapplo.CaliburnMicro.NotifyIconWpf.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.CaliburnMicro.Security, Version=1.0.39.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.CaliburnMicro.Security.1.0.39-beta\lib\net45\Dapplo.CaliburnMicro.Security.dll</HintPath>
+    <Reference Include="Dapplo.CaliburnMicro.Security, Version=1.0.42.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.CaliburnMicro.Security.1.0.42\lib\net45\Dapplo.CaliburnMicro.Security.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.CaliburnMicro.Toasts, Version=1.0.39.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.CaliburnMicro.Toasts.1.0.39-beta\lib\net452\Dapplo.CaliburnMicro.Toasts.dll</HintPath>
+    <Reference Include="Dapplo.CaliburnMicro.Toasts, Version=1.0.42.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.CaliburnMicro.Toasts.1.0.42\lib\net452\Dapplo.CaliburnMicro.Toasts.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.CaliburnMicro.Translations, Version=1.0.39.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.CaliburnMicro.Translations.1.0.39-beta\lib\net45\Dapplo.CaliburnMicro.Translations.dll</HintPath>
+    <Reference Include="Dapplo.CaliburnMicro.Translations, Version=1.0.42.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.CaliburnMicro.Translations.1.0.42\lib\net45\Dapplo.CaliburnMicro.Translations.dll</HintPath>
     </Reference>
     <Reference Include="Dapplo.HttpExtensions, Version=0.8.35.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapplo.HttpExtensions.0.8.35\lib\net46\Dapplo.HttpExtensions.dll</HintPath>
@@ -144,11 +144,11 @@
     <Reference Include="Dapplo.Log.Loggers, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapplo.Log.Loggers.1.2.1\lib\net45\Dapplo.Log.Loggers.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.Owin, Version=0.2.86.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.Owin.0.2.86-beta\lib\net451\Dapplo.Owin.dll</HintPath>
+    <Reference Include="Dapplo.Owin, Version=0.2.88.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.Owin.0.2.88\lib\net451\Dapplo.Owin.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.SignalR, Version=0.2.86.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.SignalR.0.2.86-beta\lib\net451\Dapplo.SignalR.dll</HintPath>
+    <Reference Include="Dapplo.SignalR, Version=0.2.88.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.SignalR.0.2.88\lib\net451\Dapplo.SignalR.dll</HintPath>
     </Reference>
     <Reference Include="Dapplo.Utils, Version=1.0.158.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapplo.Utils.1.0.158\lib\net45\Dapplo.Utils.dll</HintPath>

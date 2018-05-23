@@ -23,6 +23,7 @@
 
 using System;
 using System.Windows;
+using Dapplo.Addons.Bootstrapper;
 using Dapplo.CaliburnMicro.Dapp;
 using Dapplo.Log;
 using Dapplo.Log.Loggers;
@@ -46,26 +47,25 @@ namespace Wapplo
             // Initialize a debug logger for Dapplo packages
             LogSettings.RegisterDefaultLogger<DebugLogger>(LogLevels.Verbose);
 #endif
-            var dapplication = new Dapplication("Wapplo", "BF63D6C4-5F1A-4D43-87C7-0607EB50D0D0")
+            var applicationConfig = ApplicationConfig.Create()
+                .WithApplicationName("Wapplo")
+                .WithMutex("BF63D6C4-5F1A-4D43-87C7-0607EB50D0D0")
+                .WithAssemblyNames("Dapplo.Addons.Config", "Dapplo.Owin", "Dapplo.Signalr")
+                .WithAssemblyPatterns("Wapplo*")
+                .WithScanDirectories(
+#if DEBUG
+                @"..\..\..\Wapplo.ShareContext\bin\Debug",
+                @"..\..\..\Wapplo.WindowsServices\bin\Debug"
+#else
+                @"..\..\..\Wapplo.ShareContext\bin\Release",
+                @"..\..\..\Wapplo.WindowsServices\bin\DebugRelease"
+#endif
+                );
+
+            var dapplication = new Dapplication(applicationConfig)
             {
                 ShutdownMode = ShutdownMode.OnExplicitShutdown
             };
-
-            dapplication.Bootstrapper
-                .FindAndLoadAssemblies("Dapplo.Addons.Config")
-                .FindAndLoadAssemblies("Dapplo.CaliburnMicro.*")
-                .FindAndLoadAssemblies("Dapplo.Owin")
-                .FindAndLoadAssemblies("Dapplo.Signalr")
-                // Add the directory where scanning takes place
-#if DEBUG
-                .AddScanDirectory(@"..\..\..\Wapplo.ShareContext\bin\Debug")
-                .AddScanDirectory(@"..\..\..\Wapplo.WindowsServices\bin\Debug")
-#else
-                .AddScanDirectory(@"..\..\..\Wapplo.ShareContext\bin\Release")
-                .AddScanDirectory(@"..\..\..\Wapplo.WindowsServices\bin\DebugRelease")
-#endif
-                // Add the Wapplo modules
-                .FindAndLoadAssemblies("Wapplo.*");
 
             dapplication.Run();
         }
