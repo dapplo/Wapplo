@@ -52,7 +52,6 @@ namespace Wapplo
                 .As<IService>()
                 .SingleInstance();
 
-
             builder
                 .RegisterType<WapploTrayIconViewModel>()
                 .As<ITrayIconViewModel>()
