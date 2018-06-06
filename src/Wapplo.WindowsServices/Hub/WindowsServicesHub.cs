@@ -65,9 +65,9 @@ namespace Wapplo.WindowsServices.Hub
         /// <inheritdoc />
         public void CopyToClipboard(string origin, string text)
         {
-            using (ClipboardNative.Lock())
+            using (var clipboardAccessToken = ClipboardNative.Access())
             {
-                ClipboardNative.SetAsUnicodeString(text);
+                clipboardAccessToken.SetAsUnicodeString(text);
             }
         }
 
@@ -108,9 +108,9 @@ namespace Wapplo.WindowsServices.Hub
         /// <inheritdoc />
         public string GetClipboardString()
         {
-            using (ClipboardNative.Lock())
+            using (var clipboardAccessToken = ClipboardNative.Access())
             {
-                return ClipboardNative.GetAsUnicodeString();
+                return clipboardAccessToken.GetAsUnicodeString();
             }
         }
 

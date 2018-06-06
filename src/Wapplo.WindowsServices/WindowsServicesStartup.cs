@@ -67,7 +67,7 @@ namespace Wapplo.WindowsServices
             {
                 return;
             }
-            _clipboardMonitor = ClipboardMonitor.OnUpdate.SubscribeOn(_uiSynchronizationContext).Subscribe(clipboardContents =>
+            _clipboardMonitor = ClipboardNative.OnUpdate.SubscribeOn(_uiSynchronizationContext).Subscribe(clipboardContents =>
             {
                 _clipboardSubjectHolder.ClipboardUpdates.OnNext(clipboardContents);
             });
