@@ -38,10 +38,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AdaptiveCards, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\AdaptiveCards.1.0.0\lib\net452\AdaptiveCards.dll</HintPath>
+      <HintPath>..\packages\AdaptiveCards.1.0.3\lib\net452\AdaptiveCards.dll</HintPath>
     </Reference>
     <Reference Include="AdaptiveCards.Rendering.Wpf, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\AdaptiveCards.Rendering.Wpf.1.0.0\lib\net452\AdaptiveCards.Rendering.Wpf.dll</HintPath>
+      <HintPath>..\packages\AdaptiveCards.Rendering.Wpf.1.0.3\lib\net452\AdaptiveCards.Rendering.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="Autofac, Version=4.8.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.4.8.1\lib\net45\Autofac.dll</HintPath>
@@ -64,23 +64,23 @@
     <Reference Include="CommonServiceLocator, Version=2.0.3.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
       <HintPath>..\packages\CommonServiceLocator.2.0.3\lib\net45\CommonServiceLocator.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.Addons, Version=1.0.47.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.Addons.1.0.47\lib\net45\Dapplo.Addons.dll</HintPath>
+    <Reference Include="Dapplo.Addons, Version=1.0.52.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.Addons.1.0.52\lib\net45\Dapplo.Addons.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.Addons.Bootstrapper, Version=1.0.47.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.Addons.Bootstrapper.1.0.47\lib\net45\Dapplo.Addons.Bootstrapper.dll</HintPath>
+    <Reference Include="Dapplo.Addons.Bootstrapper, Version=1.0.52.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.Addons.Bootstrapper.1.0.52\lib\net45\Dapplo.Addons.Bootstrapper.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.CaliburnMicro, Version=1.0.46.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.CaliburnMicro.1.0.46\lib\net46\Dapplo.CaliburnMicro.dll</HintPath>
+    <Reference Include="Dapplo.CaliburnMicro, Version=1.0.49.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.CaliburnMicro.1.0.49\lib\net46\Dapplo.CaliburnMicro.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.CaliburnMicro.Cards, Version=1.0.46.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.CaliburnMicro.Cards.1.0.46\lib\net46\Dapplo.CaliburnMicro.Cards.dll</HintPath>
+    <Reference Include="Dapplo.CaliburnMicro.Cards, Version=1.0.49.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.CaliburnMicro.Cards.1.0.49\lib\net46\Dapplo.CaliburnMicro.Cards.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.CaliburnMicro.Toasts, Version=1.0.46.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.CaliburnMicro.Toasts.1.0.46\lib\net46\Dapplo.CaliburnMicro.Toasts.dll</HintPath>
+    <Reference Include="Dapplo.CaliburnMicro.Toasts, Version=1.0.49.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.CaliburnMicro.Toasts.1.0.49\lib\net46\Dapplo.CaliburnMicro.Toasts.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.HttpExtensions, Version=0.8.35.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.HttpExtensions.0.8.35\lib\net46\Dapplo.HttpExtensions.dll</HintPath>
+    <Reference Include="Dapplo.HttpExtensions, Version=0.8.43.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.HttpExtensions.0.8.43\lib\net46\Dapplo.HttpExtensions.dll</HintPath>
     </Reference>
     <Reference Include="Dapplo.Ini, Version=0.5.28.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapplo.Ini.0.5.28\lib\net45\Dapplo.Ini.dll</HintPath>
@@ -94,45 +94,45 @@
     <Reference Include="Dapplo.Utils, Version=1.0.158.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapplo.Utils.1.0.158\lib\net45\Dapplo.Utils.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.Windows, Version=0.5.66.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.Windows.0.5.66\lib\net46\Dapplo.Windows.dll</HintPath>
+    <Reference Include="Dapplo.Windows, Version=0.5.80.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.Windows.0.5.80\lib\net46\Dapplo.Windows.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.Windows.Clipboard, Version=0.5.66.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.Windows.Clipboard.0.5.66\lib\net46\Dapplo.Windows.Clipboard.dll</HintPath>
+    <Reference Include="Dapplo.Windows.Clipboard, Version=0.5.80.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.Windows.Clipboard.0.5.80\lib\net46\Dapplo.Windows.Clipboard.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.Windows.Common, Version=0.5.66.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.Windows.Common.0.5.66\lib\net46\Dapplo.Windows.Common.dll</HintPath>
+    <Reference Include="Dapplo.Windows.Common, Version=0.5.80.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.Windows.Common.0.5.80\lib\net46\Dapplo.Windows.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.Windows.DesktopWindowsManager, Version=0.5.66.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.Windows.DesktopWindowsManager.0.5.66\lib\net46\Dapplo.Windows.DesktopWindowsManager.dll</HintPath>
+    <Reference Include="Dapplo.Windows.DesktopWindowsManager, Version=0.5.80.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.Windows.DesktopWindowsManager.0.5.80\lib\net46\Dapplo.Windows.DesktopWindowsManager.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.Windows.Dpi, Version=0.5.66.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.Windows.Dpi.0.5.66\lib\net46\Dapplo.Windows.Dpi.dll</HintPath>
+    <Reference Include="Dapplo.Windows.Dpi, Version=0.5.80.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.Windows.Dpi.0.5.80\lib\net46\Dapplo.Windows.Dpi.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.Windows.Gdi32, Version=0.5.66.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.Windows.Gdi32.0.5.66\lib\net46\Dapplo.Windows.Gdi32.dll</HintPath>
+    <Reference Include="Dapplo.Windows.Gdi32, Version=0.5.80.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.Windows.Gdi32.0.5.80\lib\net46\Dapplo.Windows.Gdi32.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.Windows.Input, Version=0.5.66.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.Windows.Input.0.5.66\lib\net46\Dapplo.Windows.Input.dll</HintPath>
+    <Reference Include="Dapplo.Windows.Input, Version=0.5.80.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.Windows.Input.0.5.80\lib\net46\Dapplo.Windows.Input.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.Windows.Kernel32, Version=0.5.66.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.Windows.Kernel32.0.5.66\lib\net46\Dapplo.Windows.Kernel32.dll</HintPath>
+    <Reference Include="Dapplo.Windows.Kernel32, Version=0.5.80.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.Windows.Kernel32.0.5.80\lib\net46\Dapplo.Windows.Kernel32.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.Windows.Messages, Version=0.5.66.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.Windows.Messages.0.5.66\lib\net46\Dapplo.Windows.Messages.dll</HintPath>
+    <Reference Include="Dapplo.Windows.Messages, Version=0.5.80.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.Windows.Messages.0.5.80\lib\net46\Dapplo.Windows.Messages.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.Windows.Shell32, Version=0.5.66.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.Windows.Shell32.0.5.66\lib\net46\Dapplo.Windows.Shell32.dll</HintPath>
+    <Reference Include="Dapplo.Windows.Shell32, Version=0.5.80.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.Windows.Shell32.0.5.80\lib\net46\Dapplo.Windows.Shell32.dll</HintPath>
     </Reference>
-    <Reference Include="Dapplo.Windows.User32, Version=0.5.66.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapplo.Windows.User32.0.5.66\lib\net46\Dapplo.Windows.User32.dll</HintPath>
+    <Reference Include="Dapplo.Windows.User32, Version=0.5.80.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapplo.Windows.User32.0.5.80\lib\net46\Dapplo.Windows.User32.dll</HintPath>
     </Reference>
     <Reference Include="HtmlAgilityPack.NetCore, Version=1.5.0.1, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\HtmlAgilityPack.NetCore.1.5.0.1\lib\net45\HtmlAgilityPack.NetCore.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.3\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.3.0\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.MarkedNet, Version=1.0.13.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.MarkedNet.1.0.13\lib\net452\Microsoft.MarkedNet.dll</HintPath>

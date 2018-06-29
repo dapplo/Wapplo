@@ -47,10 +47,13 @@ namespace Wapplo
             // Initialize a debug logger for Dapplo packages
             LogSettings.RegisterDefaultLogger<DebugLogger>(LogLevels.Verbose);
 #endif
-            var applicationConfig = ApplicationConfig.Create()
+            var applicationConfig = ApplicationConfigBuilder
+                .Create()
                 .WithApplicationName("Wapplo")
                 .WithMutex("BF63D6C4-5F1A-4D43-87C7-0607EB50D0D0")
-                .WithAssemblyNames("Dapplo.Addons.Config", "Dapplo.Owin", "Dapplo.Signalr")
+                .WithConfigSupport()
+                .WithCaliburnMicro()
+                .WithAssemblyNames("Dapplo.Owin", "Dapplo.Signalr")
                 .WithAssemblyPatterns("Wapplo*")
                 .WithScanDirectories(
 #if DEBUG
@@ -60,7 +63,8 @@ namespace Wapplo
                 @"..\..\..\Wapplo.ShareContext\bin\Release",
                 @"..\..\..\Wapplo.WindowsServices\bin\DebugRelease"
 #endif
-                );
+                )
+                .BuildApplicationConfig();
 
             var dapplication = new Dapplication(applicationConfig)
             {
