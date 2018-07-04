@@ -34,7 +34,7 @@ namespace Wapplo.Modules
 	/// <summary>
 	///     Process commandline arguments
 	/// </summary>
-	[ServiceOrder(int.MinValue)]
+	[Service(nameof(ArgumentsStartup))]
 	public class ArgumentsStartup : IStartup
 	{
 	    private readonly IWebserverConfiguration _webserverConfiguration;
@@ -54,9 +54,9 @@ namespace Wapplo.Modules
 		///     Perform a start of whatever needs to be started.
 		///     Make sure this can be called multiple times, e.g. do nothing when it was already started.
 		/// </summary>
-		public void Start()
+		public void Startup()
 		{
-			var commandlineOptions = CommandlineOptions.HandleArguments(Environment.GetCommandLineArgs());
+			var commandlineOptions = CommandlineOptions.HandleArguments(Environment.GetCommandLineArgs(), _webserverConfiguration);
 			if (commandlineOptions == null)
 			{
 				// Parse error, or help requested.

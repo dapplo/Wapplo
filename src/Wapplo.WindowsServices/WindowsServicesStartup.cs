@@ -34,7 +34,7 @@ namespace Wapplo.WindowsServices
     /// <summary>
     /// Make it possible to subscribe to events
     /// </summary>
-    [ServiceOrder(CaliburnStartOrder.User)]
+    [Service(nameof(WindowsServicesStartup), nameof(CaliburnServices.CaliburnMicroBootstrapper), TaskSchedulerName = "ui")]
     public class WindowsServicesStartup : IStartup, IShutdown
     {
         private static readonly LogSource Log = new LogSource();
@@ -61,7 +61,7 @@ namespace Wapplo.WindowsServices
         /// <summary>
         /// Start will register all needed services
         /// </summary>
-        public void Start()
+        public void Startup()
         {
             if (!_windowsServicesConfiguration.AllowClipboardMonitoring)
             {

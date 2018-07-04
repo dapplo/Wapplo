@@ -37,8 +37,6 @@ namespace Wapplo.Utils
     /// </summary>
     public class CommandlineOptions
     {
-        private static readonly IWebserverConfiguration WebserverConfiguration = IniConfig.Current.Get<IWebserverConfiguration>();
-
         /// <summary>
         ///     Hostname to accept request on.
         /// </summary>
@@ -67,7 +65,7 @@ namespace Wapplo.Utils
         /// </summary>
         /// <param name="args"></param>
         /// <returns></returns>
-        public static CommandlineOptions HandleArguments(IEnumerable<string> args)
+        public static CommandlineOptions HandleArguments(IEnumerable<string> args, IWebserverConfiguration webserverConfiguration)
         {
             CommandlineOptions result;
 
@@ -81,7 +79,7 @@ namespace Wapplo.Utils
                     }
                 });
                 var parseResult = parser.ParseArguments(
-                    () => new CommandlineOptions {Port = WebserverConfiguration.Port, Hostname = WebserverConfiguration.Hostname},
+                    () => new CommandlineOptions {Port = webserverConfiguration.Port, Hostname = webserverConfiguration.Hostname},
                     args);
                 result = parseResult.MapResult(parsed => parsed, nonParsed => null);
                 // TODO: Handle some options

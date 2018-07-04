@@ -34,7 +34,7 @@ namespace Wapplo.Modules
 	/// <summary>
 	///     An abstract Owin Module which makes it easier to configure a file server
 	/// </summary>
-	[ServiceOrder(OwinModuleStartupOrders.User)]
+	[Service(nameof(ConfigureOwinFileServer))]
 	public class ConfigureOwinFileServer : BaseOwinModule
 	{
 		private static readonly LogSource Log = new LogSource();
