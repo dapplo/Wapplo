@@ -26,6 +26,7 @@ using Dapplo.CaliburnMicro.Menu;
 using Dapplo.CaliburnMicro.NotifyIconWpf;
 using Dapplo.Ini;
 using Dapplo.Owin;
+using Dapplo.Owin.Configuration;
 using Wapplo.Configuration;
 using Wapplo.Modules;
 using Wapplo.Ui;
@@ -41,6 +42,12 @@ namespace Wapplo
         /// <inheritdoc />
         protected override void Load(ContainerBuilder builder)
         {
+            builder
+                .Register(context => IniConfig.Current.Get<IWebserverConfiguration>())
+                .As<IWebserverConfiguration>()
+                .As<IOwinConfiguration>()
+                .SingleInstance();
+
             builder
                 .RegisterType<ArgumentsStartup>()
                 .As<IService>()
