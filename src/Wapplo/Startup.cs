@@ -24,6 +24,7 @@
 using System;
 using System.Windows;
 using Dapplo.Addons.Bootstrapper;
+using Dapplo.Addons.Config;
 using Dapplo.CaliburnMicro.Dapp;
 using Dapplo.Log;
 using Dapplo.Log.Loggers;
@@ -52,6 +53,8 @@ namespace Wapplo
                 .WithApplicationName("Wapplo")
                 .WithMutex("BF63D6C4-5F1A-4D43-87C7-0607EB50D0D0")
                 .WithConfigSupport()
+                .WithIniSectionResolving()
+                .WithLanguageResolving()
                 .WithCaliburnMicro()
                 .WithAssemblyNames("Dapplo.Owin", "Dapplo.Signalr")
                 .WithAssemblyPatterns("Wapplo*")

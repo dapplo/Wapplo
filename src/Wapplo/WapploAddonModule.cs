@@ -49,10 +49,6 @@ namespace Wapplo
                 .SingleInstance();
 
             builder
-                .RegisterType<ArgumentsStartup>()
-                .As<IService>()
-                .SingleInstance();
-            builder
                 .RegisterType<ConfigureOwinFileServer>()
                 .As<IOwinModule>()
                 .SingleInstance();

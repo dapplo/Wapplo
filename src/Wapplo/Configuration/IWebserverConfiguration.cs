@@ -21,6 +21,7 @@
 
 #region using
 
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.Serialization;
 using Dapplo.Ini;
@@ -38,6 +39,13 @@ namespace Wapplo.Configuration
 	[Description("The configuration for the web-server (owin)")]
 	public interface IWebserverConfiguration : IIniSection, IOwinConfiguration, ISignalRConfiguration
 	{
+	    /// <summary>
+	    /// Overwrite the default value
+	    /// </summary>
+	    [Description("Urls for the Owin server to listen on.")]
+        [DefaultValue("http://localhost:9277")]
+	    new IList<string> ListeningUrls { get; set; }
+
 		/// <summary>
 		/// Enable serving of files from a html sub folder, this can be used to allow error pages.
 		/// </summary>

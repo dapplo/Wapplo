@@ -35,7 +35,7 @@ namespace Wapplo.WindowsServices.Configuration
 		/// <summary>
 		/// Specify if web applications are allowed to monitor the clipboard, default is false
 		/// </summary>
-		[DefaultValue(false), Description("Specify if web applications are allowed to monitor the clipboard"), DataMember(EmitDefaultValue = true)]
+		[DefaultValue(true), Description("Specify if web applications are allowed to monitor the clipboard"), DataMember(EmitDefaultValue = true)]
 		bool AllowClipboardMonitoring { get; set; }
 	}
 }
