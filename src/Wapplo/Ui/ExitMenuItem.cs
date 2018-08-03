@@ -21,7 +21,6 @@
 
 #region using
 
-using System.ComponentModel.Composition;
 using System.Windows;
 using System.Windows.Media;
 using Dapplo.CaliburnMicro.Extensions;
