@@ -19,6 +19,7 @@
 //  You should have a copy of the GNU Lesser General Public License
 //  along with Wapplo. If not, see <http://www.gnu.org/licenses/lgpl.txt>.
 
+using System.Diagnostics;
 using System.Reflection;
 using Dapplo.Addons;
 using Dapplo.Log;
@@ -52,7 +53,7 @@ namespace Wapplo.Modules
 	        IWebserverConfiguration webserverConfiguration)
 	    {
 	        WebserverConfiguration = webserverConfiguration;
-	    }
+        }
 
 		/// <summary>
 		///     Configure FileServer for Owin
@@ -61,7 +62,12 @@ namespace Wapplo.Modules
 		/// <param name="appBuilder">IAppBuilder</param>
 		public override void Configure(IOwinServer server, IAppBuilder appBuilder)
 		{
-			Log.Verbose().WriteLine("Enabling file server: {0}", WebserverConfiguration.EnableFileServer);
+
+			// This removes multiple entries in the debug console
+			// It should be called sooner, but not to soon, need to check
+			Trace.Listeners.Remove("HostingTraceListener");
+
+            Log.Verbose().WriteLine("Enabling file server: {0}", WebserverConfiguration.EnableFileServer);
 			if (!WebserverConfiguration.EnableFileServer)
 			{
 				return;
@@ -92,8 +98,7 @@ namespace Wapplo.Modules
 					ConfigurePhysicalFileServer(appBuilder, WebserverConfiguration.FileServerPath, WebserverConfiguration.FileServerLocation);
 					break;
 			}
-
-		}
+        }
 
 		/// <summary>
 		/// Configure a physical file server

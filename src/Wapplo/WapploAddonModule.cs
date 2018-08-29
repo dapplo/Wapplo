@@ -52,6 +52,7 @@ namespace Wapplo
                 .RegisterType<ConfigureOwinFileServer>()
                 .As<IOwinModule>()
                 .SingleInstance();
+
             builder
                 .RegisterType<OwinService>()
                 .As<IService>()
@@ -67,6 +68,7 @@ namespace Wapplo
                 .RegisterType<ExitMenuItem>()
                 .As<IMenuItem>()
                 .SingleInstance();
+
             builder
                 .RegisterType<TitleMenuItem>()
                 .As<IMenuItem>()

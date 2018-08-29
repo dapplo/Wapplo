@@ -34,7 +34,7 @@ namespace Wapplo.WindowsServices
     /// <summary>
     /// Make it possible to subscribe to events
     /// </summary>
-    [Service(nameof(WindowsServicesStartup), nameof(CaliburnServices.CaliburnMicroBootstrapper), TaskSchedulerName = "ui")]
+    [Service(nameof(WindowsServicesStartup), nameof(CaliburnServices.CaliburnMicroBootstrapper), nameof(CaliburnServices.IniSectionService), TaskSchedulerName = "ui")]
     public class WindowsServicesStartup : IStartup, IShutdown
     {
         private static readonly LogSource Log = new LogSource();
